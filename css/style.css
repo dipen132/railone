@@ -1,0 +1,21 @@
+/* Custom Styles for Railone Pass */
+
+/* Argyle / Diamond security pattern */
+.bg-argyle {
+  background-color: #1c1c1c;
+  background-image: 
+    repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 24px),
+    repeating-linear-gradient(60deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 24px);
+}
+
+/* Vertical text mode */
+.vertical-rl {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* Rolling / slot-machine transition for timer digits */
+.digit-roll {
+  display: inline-block;
+  transition: transform 0.25s ease-in-out;
+}
