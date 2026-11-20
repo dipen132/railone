@@ -141,7 +141,7 @@ body {
    ========================================================================== */
 .dynamic-card {
   background-color: #141517;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='52' viewBox='0 0 32 52'%3E%3Crect width='32' height='52' fill='%23141517'/%3E%3Cpolygon points='16,0 32,26 16,52 0,26' fill='%2326282b'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='52' viewBox='0 0 32 52'%3E%3Crect width='32' height='52' fill='%23141517'/%3E%3Cpolygon points='16,0 32,26 16,52 0,26' fill='%2325272b'/%3E%3C/svg%3E");
   background-size: 32px 52px;
   background-repeat: repeat;
   border-radius: 14px;
@@ -150,42 +150,49 @@ body {
   overflow: hidden;
   display: flex;
   align-items: stretch;
-  min-height: 196px;
+  min-height: 200px;
   font-family: 'Poppins', sans-serif;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Lime green top accent bar - flush inside rounded corners */
 .dynamic-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 6px;
-  background-color: #84cc16;
+  height: 7px;
+  background-color: #84c43e;
   z-index: 10;
+  border-radius: 14px 14px 0 0;
 }
 
+/* Left stub: wider (60px ~ 15.8% matches real photo ratio) */
 .card-stub-left {
-  width: 48px;
+  width: 60px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
+  padding-top: 7px;
 }
 
+/* Right stub: narrower (50px ~ 12.3% matches real photo ratio) */
 .card-stub-right {
-  width: 48px;
+  width: 50px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
+  padding-top: 7px;
 }
 
+/* INDIAN RAILWAYS — bottom-to-top orientation (-90deg = I at bottom, S at top) */
 .stub-left-text {
   position: absolute;
   left: 50%;
@@ -193,14 +200,15 @@ body {
   transform: translate(-50%, -50%) rotate(-90deg);
   white-space: nowrap;
   font-family: 'Poppins', sans-serif;
-  font-size: 13px;
+  font-size: 11.5px;
   font-weight: 800;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.28em;
   color: #ffffff;
   text-transform: uppercase;
   user-select: none;
 }
 
+/* Devanagari — no letter-spacing to preserve shirorekha ligatures */
 .stub-right-text {
   position: absolute;
   left: 50%;
@@ -208,19 +216,20 @@ body {
   transform: translate(-50%, -50%) rotate(-90deg);
   white-space: nowrap;
   font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0;
-  word-spacing: 8px;
+  word-spacing: 6px;
   color: #ffffff;
   user-select: none;
 }
 
+/* Dashed perforation: real photo shows 9px dash, 3px gap */
 .stub-divider {
   width: 2px;
   flex-shrink: 0;
   align-self: stretch;
-  margin: 6px 0;
+  margin: 7px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -229,43 +238,44 @@ body {
 .dynamic-center {
   flex-grow: 1;
   text-align: center;
-  padding: 12px 6px;
+  padding: 16px 4px 12px 4px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .dynamic-title {
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
+  line-height: 1.3;
 }
 
-/* Odometer Slot Reel */
+/* Timer: 56px font matches ~66px physical height in real photo */
 .countdown-row {
-  margin: 2px 0;
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 48px;
+  font-size: 56px;
   font-weight: 700;
-  color: #ff3b1e;
+  color: #ff3c1e;
   line-height: 1;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 .colon-separator {
   margin: 0 1px;
   font-weight: 700;
-  color: #ff3b1e;
+  color: #ff3c1e;
 }
 
 .ticker-viewport {
   display: inline-block;
-  height: 48px;
-  line-height: 48px;
+  height: 56px;
+  line-height: 56px;
   overflow: hidden;
   vertical-align: middle;
 }
@@ -277,41 +287,43 @@ body {
 }
 
 .ticker-cell {
-  height: 48px;
-  line-height: 48px;
+  height: 56px;
+  line-height: 56px;
   text-align: center;
   font-weight: 700;
-  color: #ff3b1e;
+  color: #ff3c1e;
 }
 
 .booking-date-label {
-  font-size: 12.5px;
+  font-size: 12px;
   color: #d1d5db;
   font-weight: 600;
   margin: 0;
+  letter-spacing: 0;
 }
 
+/* Date: matches ~19px physical size in real photo */
 .booking-date-value {
-  font-size: 23px;
+  font-size: 22px;
   font-weight: 700;
   color: #f59e0b;
-  margin: 2px 0 0 0;
+  margin: 1px 0 0 0;
   letter-spacing: -0.01em;
   line-height: 1.1;
 }
 
 .reference-text {
-  font-size: 11.5px;
+  font-size: 11px;
   color: #9ca3af;
   font-weight: 600;
-  margin: 3px 0 0 0;
+  margin: 2px 0 0 0;
 }
 
 .nontransferable-text {
-  font-size: 12px;
+  font-size: 11.5px;
   color: #e5e7eb;
   font-weight: 600;
-  margin: 2px 0 0 0;
+  margin: 1px 0 0 0;
 }
 
 /* ==========================================
