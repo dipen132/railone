@@ -19,25 +19,46 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3. Countdown Timer - Starts at 05:00 and continues decrementing every second
-  let timeLeft = 300; // 5 minutes 00 seconds
-  const timerElem = document.getElementById("countdown");
+  // 3. Smooth Vertical Rolling Countdown Timer (Strictly 1 Tick Per Second)
+  let timeLeft = 300; // 05:00
+  const minElem = document.getElementById("timer-min");
+  const track = document.getElementById("ticker-track");
+  const currDigit = document.getElementById("digit-curr");
+  const nextDigit = document.getElementById("digit-next");
 
-  function updateTimer() {
-    if (!timerElem) return;
-    const minutes = Math.floor(timeLeft / 60);
-    const seconds = timeLeft % 60;
-    
-    timerElem.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  let isRolling = false;
 
-    if (timeLeft > 0) {
-      timeLeft--;
-    } else {
-      timeLeft = 300; // Reset to 05:00 and continue
-    }
+  function tick() {
+    if (!minElem || !track || !currDigit || !nextDigit) return;
+    if (isRolling) return;
+
+    // Calculate current and upcoming time
+    const currentM = Math.floor(timeLeft / 60);
+    const currentS = timeLeft % 60;
+
+    timeLeft = timeLeft > 0 ? timeLeft - 1 : 300;
+
+    const nextM = Math.floor(timeLeft / 60);
+    const nextS = timeLeft % 60;
+
+    minElem.textContent = String(nextM).padStart(2, '0');
+    currDigit.textContent = String(currentS).padStart(2, '0');
+    nextDigit.textContent = String(nextS).padStart(2, '0');
+
+    // Trigger smooth vertical roll (280ms duration)
+    isRolling = true;
+    track.style.transition = 'transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1)';
+    track.style.transform = 'translateY(-52px)';
+
+    // Reset track position silently after transition ends
+    setTimeout(() => {
+      track.style.transition = 'none';
+      currDigit.textContent = String(nextS).padStart(2, '0');
+      track.style.transform = 'translateY(0)';
+      isRolling = false;
+    }, 290);
   }
 
-  // Immediate initial render and clean 1-second interval
-  updateTimer();
-  setInterval(updateTimer, 1000);
+  // Tick strictly once every 1000ms
+  setInterval(tick, 1000);
 });

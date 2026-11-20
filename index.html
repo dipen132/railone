@@ -18,7 +18,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
   <!-- Modular Stylesheet with Cache Busting -->
-  <link rel="stylesheet" href="css/style.css?v=2.5" />
+  <link rel="stylesheet" href="css/style.css?v=2.6" />
 </head>
 <body class="bg-[#f0f2f5] min-h-screen flex justify-center items-start text-gray-800">
 
@@ -77,9 +77,16 @@
         <div class="grow text-center py-3.5 px-1.5 flex flex-col justify-between">
           <p class="text-[15px] font-bold text-white tracking-tight leading-tight">Dynamic preview will close in</p>
           
-          <!-- Large, Prominent 1-Second Countdown in Bold Geometric Sans (50px) -->
-          <div class="my-0.5 flex items-center justify-center">
-            <span id="countdown" class="text-[50px] font-black text-[#ff2a2a] tracking-tight leading-none drop-shadow-sm">05:00</span>
+          <!-- Smooth Vertical Rolling Odometer Ticker (50px Bold Poppins) -->
+          <div class="my-0.5 flex items-center justify-center text-[50px] font-black text-[#ff2a2a] tracking-tight leading-none drop-shadow-sm select-none">
+            <span id="timer-min">05</span>
+            <span class="mx-0.5">:</span>
+            <div class="ticker-viewport">
+              <div id="ticker-track" class="ticker-track">
+                <span id="digit-curr" class="ticker-cell">00</span>
+                <span id="digit-next" class="ticker-cell">59</span>
+              </div>
+            </div>
           </div>
 
           <div>
@@ -255,6 +262,6 @@
   </main>
 
   <!-- Modular Scripts with Cache Busting -->
-  <script src="js/app.js?v=2.5"></script>
+  <script src="js/app.js?v=2.6"></script>
 </body>
 </html>

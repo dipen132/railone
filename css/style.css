@@ -44,3 +44,24 @@ body, button, input, select, textarea {
   writing-mode: vertical-rl;
   text-orientation: mixed;
 }
+
+/* Seamless Vertical Rolling Ticker */
+.ticker-viewport {
+  display: inline-block;
+  height: 52px;
+  line-height: 52px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.ticker-track {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(0);
+}
+
+.ticker-cell {
+  height: 52px;
+  line-height: 52px;
+  text-align: center;
+}
