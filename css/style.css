@@ -130,11 +130,17 @@ body {
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 2px 0 2px 4px;
+  padding: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
+}
+
+.header-action-icon {
+  width: 18px;
+  height: 20px;
+  display: block;
 }
 
 /* ==========================================================================
