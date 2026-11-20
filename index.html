@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Production Modular Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=4.4" />
+  <link rel="stylesheet" href="css/style.css?v=4.5" />
 
   <!-- Core Libraries -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -31,7 +31,10 @@
     <header class="app-header">
       <div class="header-left-group">
         <button class="back-btn" aria-label="Go back">
-          <i data-lucide="arrow-left" style="width: 16px; height: 16px; stroke-width: 2.5;"></i>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
         </button>
         <div class="header-title-group">
           <h1 class="header-title">Booking Details</h1>
@@ -39,8 +42,8 @@
         </div>
       </div>
       <button class="header-action-btn" aria-label="Ticket options">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffffff">
-          <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h12a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm3 4a1 1 0 011-1h8a1 1 0 110 2H8a1 1 0 01-1-1zm0 4a1 1 0 011-1h8a1 1 0 110 2H8a1 1 0 01-1-1zm0 4a1 1 0 011-1h8a1 1 0 110 2H8a1 1 0 01-1-1z" clip-rule="evenodd" />
+        <svg width="19" height="21" viewBox="0 0 20 22" fill="#ffffff">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M2,2.5 L4,1 L6,2.5 L8,1 L10,2.5 L12,1 L14,2.5 L16,1 L18,2.5 L18,19.5 L16,21 L14,19.5 L12,21 L10,19.5 L8,21 L6,19.5 L4,21 L2,19.5 Z M5,6.5 H15 V8 H5 Z M5,10.5 H15 V12 H5 Z M5,14.5 H15 V16 H5 Z" />
         </svg>
       </button>
     </header>
@@ -237,6 +240,6 @@
   </main>
 
   <!-- Modular Scripts with Cache Busting -->
-  <script src="js/app.js?v=4.4"></script>
+  <script src="js/app.js?v=4.5"></script>
 </body>
 </html>
