@@ -19,26 +19,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3. Dynamic Countdown Timer (Matches 04:55 starting counter)
-  let timeLeft = 295; // 4 minutes 55 seconds
-  const timerElem = document.getElementById("countdown");
+  // 3. Dynamic Rolling Slot-Machine Countdown Timer
+  let timeLeft = 295; // 04:55
+  const minElem = document.getElementById("timer-min");
+  const reelElem = document.getElementById("ticker-reel");
+  const currentSecElem = document.getElementById("current-sec");
+  const nextSecElem = document.getElementById("next-sec");
 
-  function updateCountdown() {
-    if (!timerElem) return;
+  function tick() {
+    if (!minElem || !reelElem || !currentSecElem || !nextSecElem) return;
 
-    const minutes = Math.floor(timeLeft / 60);
-    const seconds = timeLeft % 60;
-    const formatted = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    const currentMinutes = Math.floor(timeLeft / 60);
+    const currentSeconds = timeLeft % 60;
     
-    timerElem.textContent = formatted;
+    // Decrement for next state
+    timeLeft = timeLeft > 0 ? timeLeft - 1 : 295;
+    const nextMinutes = Math.floor(timeLeft / 60);
+    const nextSeconds = timeLeft % 60;
 
-    if (timeLeft > 0) {
-      timeLeft--;
-    } else {
-      timeLeft = 295; // Reset loop for demo
-    }
+    minElem.textContent = String(currentMinutes).padStart(2, '0');
+    currentSecElem.textContent = String(currentSeconds).padStart(2, '0');
+    nextSecElem.textContent = String(nextSeconds).padStart(2, '0');
+
+    // Trigger vertical rolling transition
+    reelElem.style.transition = 'none';
+    reelElem.style.transform = 'translateY(0px)';
+
+    // Force reflow
+    void reelElem.offsetHeight;
+
+    reelElem.style.transition = 'transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1)';
+    reelElem.style.transform = 'translateY(-44px)';
   }
 
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
+  // Run tick every second
+  setInterval(tick, 1000);
 });

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700;800&display=swap');
 
 /* Apply Inter system-wide */
 body, button, input, select, textarea {
@@ -7,22 +7,45 @@ body, button, input, select, textarea {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Subtle Diamond/Argyle Security Pattern */
+/* Argyle / Diamond Texture */
 .bg-argyle {
-  background-color: #171717;
+  background-color: #17181a;
   background-image: 
-    repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.04) 1px, transparent 1px, transparent 26px),
-    repeating-linear-gradient(60deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.04) 1px, transparent 1px, transparent 26px);
+    repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.045) 1px, transparent 1px, transparent 28px),
+    repeating-linear-gradient(60deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.045) 1px, transparent 1px, transparent 28px);
 }
 
-/* Vertical rotated text */
+/* Vertical text mode */
 .vertical-rl {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
 }
 
-/* Subtle watermarked wave in footer */
-.bg-watermark {
-  background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
-  background-size: 16px 16px;
+/* Perforated ticket stub vertical dashed line */
+.ticket-perforation-l {
+  border-right: 1.5px dashed rgba(255, 255, 255, 0.28);
+}
+.ticket-perforation-r {
+  border-left: 1.5px dashed rgba(255, 255, 255, 0.28);
+}
+
+/* Rolling Digits Slot Machine Container */
+.ticker-window {
+  display: inline-flex;
+  height: 44px;
+  overflow: hidden;
+  vertical-align: middle;
+  line-height: 44px;
+}
+
+.ticker-reel {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ticker-digit {
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
 }

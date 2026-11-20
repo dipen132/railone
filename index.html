@@ -15,13 +15,13 @@
   <!-- Modular Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="bg-gray-100 min-h-screen flex justify-center items-start sm:py-6 text-gray-800">
+<body class="bg-gray-200 min-h-screen flex justify-center items-start sm:py-6 text-gray-800">
 
-  <!-- Mobile Screen Frame (Matches Phone Display) -->
-  <main class="w-full max-w-[420px] bg-white sm:rounded-[36px] shadow-2xl overflow-hidden flex flex-col pb-10">
+  <!-- Mobile Viewport Frame (Soft grey app background like native iOS) -->
+  <main class="w-full max-w-[420px] bg-[#f0f2f5] sm:rounded-[36px] shadow-2xl overflow-hidden flex flex-col pb-10">
 
     <!-- ========================================== -->
-    <!-- SECTION 1: HEADER & GREETING BAR           -->
+    <!-- SECTION 1: APP BAR (Royal Blue)            -->
     <!-- ========================================== -->
     <header class="bg-[#0052cc] text-white px-4 pt-3.5 pb-3 flex items-center justify-between shadow-sm">
       <div class="flex items-center gap-3">
@@ -41,29 +41,36 @@
     <div class="px-3.5 pt-3 space-y-3">
       
       <!-- Greeting Pill Banner -->
-      <div class="bg-[#ebf8ee] border border-[#d1f2d9] text-[#1e6b37] text-[12px] font-medium py-1.5 px-3 rounded-full text-center tracking-tight">
+      <div class="bg-[#edf7ed] text-[#1e6b37] text-[12.5px] font-medium py-1.5 px-3 rounded-full text-center shadow-xs">
         Thank You Kapadia Om Vipulkumar, Happy Journey !
       </div>
 
       <!-- ========================================== -->
       <!-- SECTION 2: DYNAMIC PREVIEW & TIMER CARD    -->
       <!-- ========================================== -->
-      <section class="bg-argyle rounded-xl border-t-[5px] border-[#76c043] text-white p-3.5 relative overflow-hidden shadow-md">
-        <!-- Left Vertical Text -->
-        <span class="absolute left-2.5 top-1/2 -translate-y-1/2 vertical-rl text-[9px] tracking-[0.2em] text-gray-400 font-bold uppercase select-none">
-          INDIAN RAILWAYS
-        </span>
-        <!-- Right Vertical Text -->
-        <span class="absolute right-2.5 top-1/2 -translate-y-1/2 vertical-rl text-[10px] tracking-[0.18em] text-gray-400 font-bold select-none">
-          भारतीय रेल
-        </span>
+      <section class="bg-argyle rounded-xl border-t-[5px] border-[#76c043] text-white relative overflow-hidden shadow-md flex items-stretch">
+        
+        <!-- Left Stub: INDIAN RAILWAYS + Dashed Perforation -->
+        <div class="w-9 shrink-0 flex items-center justify-center ticket-perforation-l py-4">
+          <span class="vertical-rl text-[9px] tracking-[0.2em] text-gray-400 font-bold uppercase select-none">
+            INDIAN RAILWAYS
+          </span>
+        </div>
 
-        <div class="text-center py-0.5">
+        <!-- Center Ticket Info -->
+        <div class="grow text-center py-3 px-2">
           <p class="text-[12px] text-gray-200 font-medium">Dynamic preview will close in</p>
           
-          <!-- Live Countdown Timer -->
-          <div id="countdown" class="text-4xl font-extrabold text-[#ff2a2a] tracking-wider my-1 drop-shadow-sm font-['JetBrains_Mono',monospace]">
-            04:55
+          <!-- Animated Rolling Slot-Machine Countdown -->
+          <div class="text-4xl font-extrabold text-[#ff2a2a] tracking-wider my-0.5 drop-shadow-sm font-['JetBrains_Mono',monospace] flex items-center justify-center">
+            <span id="timer-min">04</span>
+            <span class="mx-0.5 animate-pulse">:</span>
+            <div class="ticker-window">
+              <div id="ticker-reel" class="ticker-reel">
+                <span class="ticker-digit" id="current-sec">55</span>
+                <span class="ticker-digit" id="next-sec">54</span>
+              </div>
+            </div>
           </div>
 
           <p class="text-[12px] text-gray-300">Ticket Booking Date & Time</p>
@@ -74,15 +81,21 @@
             <span class="block text-[11px] text-gray-400">Ticket is Non-Transferable</span>
           </div>
         </div>
+
+        <!-- Right Stub: भारतीय रेल + Dashed Perforation -->
+        <div class="w-9 shrink-0 flex items-center justify-center ticket-perforation-r py-4">
+          <span class="vertical-rl text-[10px] tracking-[0.18em] text-gray-400 font-bold select-none">
+            भारतीय रेल
+          </span>
+        </div>
       </section>
 
       <!-- ========================================== -->
       <!-- SECTION 3: TICKET DETAILS CARD             -->
+      <!-- Pure white card without top green band     -->
       <!-- ========================================== -->
-      <section class="border border-gray-200/80 rounded-2xl bg-white shadow-sm overflow-hidden">
-        <!-- Top Accent Strip -->
-        <div class="h-1.5 bg-[#84cc16]"></div>
-
+      <section class="rounded-2xl bg-white shadow-sm overflow-hidden border border-gray-100">
+        
         <div class="p-4 space-y-3.5">
           <!-- Season Ticket Number & Active Status -->
           <div class="flex justify-between items-start">
@@ -96,7 +109,7 @@
             </span>
           </div>
 
-          <!-- 2-Column Info Grid with exact Title Case labels -->
+          <!-- 2-Column Info Grid with Title Case labels -->
           <div class="grid grid-cols-2 gap-y-3.5 gap-x-4 text-[13px] pt-1 border-t border-gray-100">
             <div>
               <span class="text-gray-500 text-[12px] block">Source</span>
@@ -178,7 +191,7 @@
       <!-- ========================================== -->
       <!-- SECTION 4: WARNING ADVISORY                -->
       <!-- ========================================== -->
-      <div class="bg-[#fdeeed] border border-[#fbd5d5]/60 rounded-xl py-2.5 px-4 text-center shadow-none">
+      <div class="bg-[#fdeeed] rounded-xl py-2.5 px-4 text-center">
         <p class="text-[11.5px] leading-[1.45] text-[#b91c1c] font-normal">
           Note: This ticket is non refundable. Ticket is stored locally on the device. Please do not change your handset or perform factory reset.
         </p>
@@ -191,15 +204,15 @@
         Upgrade to Superfast
       </button>
 
-      <!-- Centered QR Code -->
-      <div class="bg-white py-4 px-2 rounded-xl flex flex-col items-center justify-center">
+      <!-- Centered QR Code Card -->
+      <div class="bg-white py-5 px-3 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center">
         <div id="qrcode" class="flex justify-center"></div>
       </div>
 
       <!-- ========================================== -->
       <!-- SECTION 6: "DO YOU KNOW?" FOOTER           -->
       <!-- ========================================== -->
-      <footer class="bg-[#f8fafc] bg-watermark border border-gray-200/70 rounded-xl p-4 space-y-2.5 text-gray-600">
+      <footer class="bg-white border border-gray-100 rounded-2xl p-4 space-y-2.5 text-gray-600 shadow-sm">
         <h2 class="font-bold text-gray-900 text-[13.5px]">
           Do you know?
         </h2>
