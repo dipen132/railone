@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3. Clean Countdown Timer - 1 Tick Per Second
-  let timeLeft = 295; // Exactly 04:55
+  // 3. Countdown Timer - Starts at 05:00 and continues decrementing every second
+  let timeLeft = 300; // 5 minutes 00 seconds
   const timerElem = document.getElementById("countdown");
 
   function updateTimer() {
@@ -28,15 +28,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const minutes = Math.floor(timeLeft / 60);
     const seconds = timeLeft % 60;
     
-    // Updates once every second cleanly
     timerElem.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
     if (timeLeft > 0) {
       timeLeft--;
     } else {
-      timeLeft = 295; // Loop for demo
+      timeLeft = 300; // Reset to 05:00 and continue
     }
   }
 
+  // Immediate initial render and clean 1-second interval
+  updateTimer();
   setInterval(updateTimer, 1000);
 });
