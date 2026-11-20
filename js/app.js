@@ -6,21 +6,21 @@ document.addEventListener("DOMContentLoaded", () => {
     lucide.createIcons();
   }
 
-  // 2. Dynamic QR Code Initialization
+  // 2. High-Density Dynamic QR Code Generator
   const qrContainer = document.getElementById("qrcode");
   if (qrContainer && window.QRCode) {
     new QRCode(qrContainer, {
-      text: "TICKET:X53JEHL010|USER:KAPADIA_OM_VIPULKUMAR|VALID:20261129",
-      width: 170,
-      height: 170,
-      colorDark: "#111827",
+      text: "UTS:X53JEHL010|Kapadia Om Vipulkuma|ANKLESHWAR JN.-SURAT|270.00|30/10/2026-29/11/2026|MNBPK7746M",
+      width: 175,
+      height: 175,
+      colorDark: "#000000",
       colorLight: "#ffffff",
       correctLevel: QRCode.CorrectLevel.M
     });
   }
 
-  // 3. Dynamic Countdown Timer (5-minute window with rolling/ticker effect)
-  let timeLeft = 295; // 04:55 to match the exact preview
+  // 3. Dynamic Countdown Timer (Matches 04:55 starting counter)
+  let timeLeft = 295; // 4 minutes 55 seconds
   const timerElem = document.getElementById("countdown");
 
   function updateCountdown() {
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (timeLeft > 0) {
       timeLeft--;
     } else {
-      timeLeft = 300; // Reset loop for demo
+      timeLeft = 295; // Reset loop for demo
     }
   }
 

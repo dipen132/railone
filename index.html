@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Booking Details - Season Ticket</title>
+  <title>Booking Details - Indian Railways</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -15,166 +15,171 @@
   <!-- Modular Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="bg-gray-100 min-h-screen flex justify-center items-start sm:py-6 font-sans antialiased text-gray-800">
+<body class="bg-gray-100 min-h-screen flex justify-center items-start sm:py-6 text-gray-800">
 
-  <!-- Mobile Viewport Frame -->
-  <main class="w-full max-w-[430px] bg-white sm:rounded-3xl shadow-xl overflow-hidden flex flex-col pb-8">
+  <!-- Mobile Screen Frame (Matches Phone Display) -->
+  <main class="w-full max-w-[420px] bg-white sm:rounded-[36px] shadow-2xl overflow-hidden flex flex-col pb-10">
 
     <!-- ========================================== -->
     <!-- SECTION 1: HEADER & GREETING BAR           -->
     <!-- ========================================== -->
-    <header class="bg-[#0052cc] text-white px-4 py-3.5 flex items-center justify-between shadow-sm">
+    <header class="bg-[#0052cc] text-white px-4 pt-3.5 pb-3 flex items-center justify-between shadow-sm">
       <div class="flex items-center gap-3">
-        <button class="w-9 h-9 rounded-full border border-white/40 flex items-center justify-center hover:bg-white/10 active:scale-95 transition" aria-label="Back">
-          <i data-lucide="arrow-left" class="w-5 h-5"></i>
+        <button class="w-9 h-9 rounded-full border border-white/60 flex items-center justify-center hover:bg-white/10 active:scale-95 transition" aria-label="Back">
+          <i data-lucide="arrow-left" class="w-5 h-5 text-white stroke-[2.2]"></i>
         </button>
         <div>
-          <h1 class="text-base font-bold leading-tight">Booking Details</h1>
-          <p class="text-xs text-blue-100">Mobile: 8980189932</p>
+          <h1 class="text-[17px] font-bold leading-tight tracking-tight">Booking Details</h1>
+          <p class="text-[12px] text-blue-100/90 font-normal">Mobile: 8980189932</p>
         </div>
       </div>
-      <button class="p-1.5 hover:bg-white/10 rounded-lg transition" aria-label="Menu">
-        <i data-lucide="receipt-text" class="w-6 h-6"></i>
+      <button class="p-1 hover:bg-white/10 rounded-lg transition" aria-label="Menu">
+        <i data-lucide="receipt-text" class="w-6 h-6 text-white stroke-[2]"></i>
       </button>
     </header>
 
     <div class="px-3.5 pt-3 space-y-3">
       
       <!-- Greeting Pill Banner -->
-      <div class="bg-[#ebf8ee] border border-green-200/60 text-[#1e6b37] text-xs font-semibold py-2 px-3 rounded-full text-center">
+      <div class="bg-[#ebf8ee] border border-[#d1f2d9] text-[#1e6b37] text-[12px] font-medium py-1.5 px-3 rounded-full text-center tracking-tight">
         Thank You Kapadia Om Vipulkumar, Happy Journey !
       </div>
 
       <!-- ========================================== -->
       <!-- SECTION 2: DYNAMIC PREVIEW & TIMER CARD    -->
       <!-- ========================================== -->
-      <section class="bg-argyle rounded-xl border-t-4 border-[#76c043] text-white p-3.5 relative overflow-hidden shadow-inner">
-        <span class="absolute left-2.5 top-1/2 -translate-y-1/2 vertical-rl text-[10px] tracking-widest text-gray-400 font-bold uppercase select-none">
+      <section class="bg-argyle rounded-xl border-t-[5px] border-[#76c043] text-white p-3.5 relative overflow-hidden shadow-md">
+        <!-- Left Vertical Text -->
+        <span class="absolute left-2.5 top-1/2 -translate-y-1/2 vertical-rl text-[9px] tracking-[0.2em] text-gray-400 font-bold uppercase select-none">
           INDIAN RAILWAYS
         </span>
-        <span class="absolute right-2.5 top-1/2 -translate-y-1/2 vertical-rl text-[10px] tracking-widest text-gray-400 font-bold uppercase select-none">
+        <!-- Right Vertical Text -->
+        <span class="absolute right-2.5 top-1/2 -translate-y-1/2 vertical-rl text-[10px] tracking-[0.18em] text-gray-400 font-bold select-none">
           भारतीय रेल
         </span>
 
-        <div class="text-center py-1">
-          <p class="text-[11px] text-gray-300 font-medium">Dynamic preview will close in</p>
+        <div class="text-center py-0.5">
+          <p class="text-[12px] text-gray-200 font-medium">Dynamic preview will close in</p>
           
-          <div id="countdown" class="text-3xl font-extrabold text-[#ff3333] tracking-wider my-1 drop-shadow-sm font-mono">
+          <!-- Live Countdown Timer -->
+          <div id="countdown" class="text-4xl font-extrabold text-[#ff2a2a] tracking-wider my-1 drop-shadow-sm font-['JetBrains_Mono',monospace]">
             04:55
           </div>
 
-          <p class="text-[11px] text-gray-300">Ticket Booking Date & Time</p>
-          <p class="text-sm font-bold text-[#e6a100] mt-0.5">29 Oct 2026, 07:25</p>
+          <p class="text-[12px] text-gray-300">Ticket Booking Date & Time</p>
+          <p class="text-[15px] font-bold text-[#f59e0b] mt-0.5 tracking-wide">29 Oct 2026, 07:25</p>
           
-          <div class="mt-2 text-[11px] text-gray-400">
+          <div class="mt-2 text-[11px] text-gray-300 space-y-0.5">
             <span class="block font-medium">R19112</span>
-            <span class="block text-[10px] text-gray-400">Ticket is Non-Transferable</span>
+            <span class="block text-[11px] text-gray-400">Ticket is Non-Transferable</span>
           </div>
         </div>
       </section>
 
       <!-- ========================================== -->
-      <!-- SECTION 3: TICKET DETAILS & PASSENGER GRID -->
+      <!-- SECTION 3: TICKET DETAILS CARD             -->
       <!-- ========================================== -->
-      <section class="border border-gray-200 rounded-2xl bg-white shadow-sm overflow-hidden">
-        <div class="h-1.5 bg-[#52c41a]"></div>
+      <section class="border border-gray-200/80 rounded-2xl bg-white shadow-sm overflow-hidden">
+        <!-- Top Accent Strip -->
+        <div class="h-1.5 bg-[#84cc16]"></div>
 
-        <div class="p-4 space-y-4">
-          <!-- Pass Identifier & Active Status -->
+        <div class="p-4 space-y-3.5">
+          <!-- Season Ticket Number & Active Status -->
           <div class="flex justify-between items-start">
             <div>
-              <p class="text-[11px] text-gray-500 uppercase tracking-wide font-medium">Season Ticket</p>
-              <p class="text-base font-bold text-gray-900 tracking-wider">X53JEHL010</p>
+              <p class="text-[12px] text-gray-500 font-normal">Season Ticket</p>
+              <p class="text-[16px] font-bold text-gray-900 tracking-wide mt-0.5">X53JEHL010</p>
             </div>
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#e6f7ea] text-[#237804]">
-              <span class="w-2 h-2 rounded-full bg-[#52c41a] animate-pulse"></span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[12px] font-bold bg-[#dcfce7] text-[#15803d]">
+              <span class="w-2 h-2 rounded-full bg-[#22c55e]"></span>
               ACTIVE
             </span>
           </div>
 
-          <!-- Journey Grid -->
-          <div class="grid grid-cols-2 gap-y-3 gap-x-4 text-xs pt-1 border-t border-gray-100">
+          <!-- 2-Column Info Grid with exact Title Case labels -->
+          <div class="grid grid-cols-2 gap-y-3.5 gap-x-4 text-[13px] pt-1 border-t border-gray-100">
             <div>
-              <span class="text-gray-400 font-semibold uppercase text-[10px] block">Source</span>
-              <span class="font-bold text-gray-900 text-sm">ANKLESHWAR JN.</span>
+              <span class="text-gray-500 text-[12px] block">Source</span>
+              <span class="font-bold text-gray-900 text-[14px]">ANKLESHWAR JN.</span>
             </div>
             <div>
-              <span class="text-gray-400 font-semibold uppercase text-[10px] block">Destination</span>
-              <span class="font-bold text-gray-900 text-sm">SURAT</span>
-            </div>
-
-            <div>
-              <span class="text-gray-400 font-semibold uppercase text-[10px] block">Distance</span>
-              <span class="font-bold text-gray-800">50 km</span>
-            </div>
-            <div>
-              <span class="text-gray-400 font-semibold uppercase text-[10px] block">Booked On</span>
-              <span class="font-semibold text-gray-800">29/10/2026 07:25</span>
+              <span class="text-gray-500 text-[12px] block">Destination</span>
+              <span class="font-bold text-gray-900 text-[14px]">SURAT</span>
             </div>
 
             <div>
-              <span class="text-gray-400 font-semibold uppercase text-[10px] block">Ticket Type</span>
-              <span class="font-bold text-gray-800">MONTHLY</span>
+              <span class="text-gray-500 text-[12px] block">Distance</span>
+              <span class="font-bold text-gray-900 text-[14px]">50 km</span>
             </div>
             <div>
-              <span class="text-gray-400 font-semibold uppercase text-[10px] block">Train Types</span>
-              <span class="font-bold text-gray-800">MAIL/EXPRESS</span>
-            </div>
-
-            <div>
-              <span class="text-gray-400 font-semibold uppercase text-[10px] block">Class</span>
-              <span class="font-bold text-gray-800">SECOND</span>
-            </div>
-            <div>
-              <span class="text-gray-400 font-semibold uppercase text-[10px] block">Fare</span>
-              <span class="font-bold text-gray-900 text-sm">270.00</span>
+              <span class="text-gray-500 text-[12px] block">Booked on</span>
+              <span class="font-bold text-gray-900 text-[14px]">29/10/2026 07:25</span>
             </div>
 
             <div>
-              <span class="text-gray-400 font-semibold uppercase text-[10px] block">Valid From</span>
-              <span class="font-bold text-gray-800">30/10/2026</span>
+              <span class="text-gray-500 text-[12px] block">Ticket Type</span>
+              <span class="font-bold text-gray-900 text-[14px]">MONTHLY</span>
             </div>
             <div>
-              <span class="text-gray-400 font-semibold uppercase text-[10px] block">Valid Upto</span>
-              <span class="font-bold text-gray-800">29/11/2026</span>
+              <span class="text-gray-500 text-[12px] block">Train Types</span>
+              <span class="font-bold text-gray-900 text-[14px]">MAIL/EXPRESS</span>
+            </div>
+
+            <div>
+              <span class="text-gray-500 text-[12px] block">Class</span>
+              <span class="font-bold text-gray-900 text-[14px]">SECOND</span>
+            </div>
+            <div>
+              <span class="text-gray-500 text-[12px] block">Fare</span>
+              <span class="font-bold text-gray-900 text-[14px]">270.00</span>
+            </div>
+
+            <div>
+              <span class="text-gray-500 text-[12px] block">Valid From</span>
+              <span class="font-bold text-gray-900 text-[14px]">30/10/2026</span>
+            </div>
+            <div>
+              <span class="text-gray-500 text-[12px] block">Valid Upto</span>
+              <span class="font-bold text-gray-900 text-[14px]">29/11/2026</span>
             </div>
           </div>
 
           <!-- Via Route Strip -->
-          <div class="flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-xs text-gray-600">
-            <i data-lucide="git-branch" class="w-4 h-4 text-gray-400"></i>
-            <span class="font-medium">Via: ------</span>
+          <div class="flex items-center gap-2 bg-[#f9fafb] border border-gray-200/80 rounded-xl px-3 py-2 text-[12px] text-gray-600">
+            <i data-lucide="share-2" class="w-3.5 h-3.5 text-gray-500 stroke-[2.2]"></i>
+            <span class="font-normal text-gray-600">Via: ------</span>
           </div>
 
-          <!-- Passenger Info -->
-          <div class="grid grid-cols-2 gap-y-2 gap-x-4 text-xs pt-3 border-t border-gray-100">
+          <!-- Passenger Details Section -->
+          <div class="grid grid-cols-2 gap-y-3 gap-x-4 text-[13px] pt-3 border-t border-gray-100">
             <div>
-              <span class="text-gray-400 font-semibold uppercase text-[10px] block">Name</span>
-              <span class="font-bold text-gray-900">Kapadia Om Vipulkuma</span>
+              <span class="text-gray-500 text-[12px] block">Name</span>
+              <span class="font-bold text-gray-900 text-[14px]">Kapadia Om Vipulkuma</span>
             </div>
             <div>
-              <span class="text-gray-400 font-semibold uppercase text-[10px] block">Age</span>
-              <span class="font-bold text-gray-800">24 years</span>
+              <span class="text-gray-500 text-[12px] block">Age</span>
+              <span class="font-bold text-gray-900 text-[14px]">24 years</span>
             </div>
             <div>
-              <span class="text-gray-400 font-semibold uppercase text-[10px] block">ID Type*</span>
-              <span class="font-semibold text-gray-800">PAN Card</span>
+              <span class="text-gray-500 text-[12px] block">ID Type*</span>
+              <span class="font-bold text-gray-900 text-[14px]">PAN Card</span>
             </div>
             <div>
-              <span class="text-gray-400 font-semibold uppercase text-[10px] block">ID Number</span>
-              <span class="font-semibold text-gray-800 font-mono">MNBPK7746M</span>
+              <span class="text-gray-500 text-[12px] block">ID Number</span>
+              <span class="font-bold text-gray-900 text-[14px]">MNBPK7746M</span>
             </div>
           </div>
         </div>
 
-        <div class="h-1.5 bg-[#52c41a]"></div>
+        <!-- Bottom Accent Strip (Matches Photo) -->
+        <div class="h-2 bg-[#a3e635]"></div>
       </section>
 
       <!-- ========================================== -->
       <!-- SECTION 4: WARNING ADVISORY                -->
       <!-- ========================================== -->
-      <div class="bg-[#fff1f0] border border-[#ffccc7] rounded-xl p-3 text-center">
-        <p class="text-[11px] leading-relaxed text-[#cf1322] font-medium">
+      <div class="bg-[#fdeeed] border border-[#fbd5d5]/60 rounded-xl py-2.5 px-4 text-center shadow-none">
+        <p class="text-[11.5px] leading-[1.45] text-[#b91c1c] font-normal">
           Note: This ticket is non refundable. Ticket is stored locally on the device. Please do not change your handset or perform factory reset.
         </p>
       </div>
@@ -182,30 +187,29 @@
       <!-- ========================================== -->
       <!-- SECTION 5: ACTION BUTTON & QR CODE         -->
       <!-- ========================================== -->
-      <button class="w-full bg-[#0066ff] hover:bg-[#0052cc] active:scale-[0.99] text-white font-semibold py-3 px-4 rounded-xl shadow-md transition flex items-center justify-center gap-2 text-sm">
-        <span>Upgrade to Superfast</span>
-        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+      <button class="w-full bg-[#0062f5] hover:bg-[#0052cc] active:scale-[0.99] text-white font-medium py-3 px-4 rounded-full shadow transition text-[15px] tracking-wide">
+        Upgrade to Superfast
       </button>
 
-      <div class="bg-white p-4 rounded-xl border border-gray-200 flex flex-col items-center justify-center">
-        <div id="qrcode" class="p-2 border border-gray-100 rounded-lg"></div>
+      <!-- Centered QR Code -->
+      <div class="bg-white py-4 px-2 rounded-xl flex flex-col items-center justify-center">
+        <div id="qrcode" class="flex justify-center"></div>
       </div>
 
       <!-- ========================================== -->
       <!-- SECTION 6: "DO YOU KNOW?" FOOTER           -->
       <!-- ========================================== -->
-      <footer class="bg-gray-50 border border-gray-200/80 rounded-xl p-3.5 space-y-2 text-xs text-gray-600">
-        <h2 class="font-bold text-gray-900 flex items-center gap-1.5">
-          <i data-lucide="info" class="w-3.5 h-3.5 text-blue-600"></i>
+      <footer class="bg-[#f8fafc] bg-watermark border border-gray-200/70 rounded-xl p-4 space-y-2.5 text-gray-600">
+        <h2 class="font-bold text-gray-900 text-[13.5px]">
           Do you know?
         </h2>
-        <p class="text-[11px] leading-normal text-gray-500">
+        <p class="text-[11.5px] leading-relaxed text-gray-500">
           IR recovers only 57% of cost of travel on an average.
         </p>
-        <p class="text-[11px] leading-normal text-gray-500">
+        <p class="text-[11.5px] leading-relaxed text-gray-500">
           This ticket is booked on a personal user ID. It's sale/purchase is an offence u/s 143 of the Railways Act, 1989
         </p>
-        <p class="text-[11px] leading-normal text-gray-500">
+        <p class="text-[11.5px] leading-relaxed text-gray-500">
           For enquiry and integrated railway helpline, please dial 139.
         </p>
       </footer>
