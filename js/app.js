@@ -1,7 +1,8 @@
 // Railone - Application Logic
+// Production-grade implementation for Indian Railways UTS Season Ticket
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Initialize Icons
+  // 1. Initialize Vector Icons
   if (window.lucide) {
     lucide.createIcons();
   }
@@ -19,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3. Smooth Vertical Rolling Countdown Timer (Strictly 1 Tick Per Second)
+  // 3. Smooth Downward Rolling Countdown Timer (Strictly 1 Tick Per Second)
   let timeLeft = 300; // 05:00
   const minElem = document.getElementById("timer-min");
   const track = document.getElementById("ticker-track");
@@ -27,6 +28,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextDigit = document.getElementById("digit-next");
 
   let isRolling = false;
+
+  // Initialize display state
+  if (minElem && currDigit && nextDigit && track) {
+    const initM = Math.floor(timeLeft / 60);
+    const initS = timeLeft % 60;
+    minElem.textContent = String(initM).padStart(2, '0');
+    currDigit.textContent = String(initS).padStart(2, '0');
+    nextDigit.textContent = String((initS + 59) % 60).padStart(2, '0');
+    track.style.transition = 'none';
+    track.style.transform = 'translateY(-50px)';
+  }
 
   function tick() {
     if (!minElem || !track || !currDigit || !nextDigit) return;
@@ -41,20 +53,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextM = Math.floor(timeLeft / 60);
     const nextS = timeLeft % 60;
 
-    minElem.textContent = String(nextM).padStart(2, '0');
-    currDigit.textContent = String(currentS).padStart(2, '0');
+    // Prepare next digit above in track
     nextDigit.textContent = String(nextS).padStart(2, '0');
-
-    // Trigger smooth vertical roll (280ms duration)
-    isRolling = true;
-    track.style.transition = 'transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1)';
+    currDigit.textContent = String(currentS).padStart(2, '0');
+    track.style.transition = 'none';
     track.style.transform = 'translateY(-50px)';
 
-    // Reset track position silently after transition ends
+    // Force browser reflow to register reset position
+    void track.offsetHeight;
+
+    // Trigger smooth downward roll into view (280ms duration)
+    isRolling = true;
+    track.style.transition = 'transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1)';
+    track.style.transform = 'translateY(0)';
+
+    // Update minutes synchronously when seconds wrap
+    if (currentS === 0) {
+      minElem.textContent = String(nextM).padStart(2, '0');
+    }
+
+    // Reset after transition finishes
     setTimeout(() => {
       track.style.transition = 'none';
       currDigit.textContent = String(nextS).padStart(2, '0');
-      track.style.transform = 'translateY(0)';
+      track.style.transform = 'translateY(-50px)';
       isRolling = false;
     }, 290);
   }

@@ -324,6 +324,7 @@ body {
 .ticker-track {
   display: flex;
   flex-direction: column;
+  transform: translateY(-50px);
   will-change: transform;
 }
 
