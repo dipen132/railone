@@ -17,8 +17,8 @@
   <!-- QRCode.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-  <!-- Modular Stylesheet -->
-  <link rel="stylesheet" href="css/style.css" />
+  <!-- Modular Stylesheet with Cache Busting -->
+  <link rel="stylesheet" href="css/style.css?v=2.1" />
 </head>
 <body class="bg-[#f0f2f5] min-h-screen flex justify-center items-start text-gray-800">
 
@@ -60,17 +60,24 @@
       <section class="bg-argyle rounded-xl border-t-[4px] border-[#76c043] text-white relative overflow-hidden shadow-md flex items-stretch">
         
         <!-- Left Stub: INDIAN RAILWAYS (Reads TOP-TO-BOTTOM) -->
-        <div class="w-9 shrink-0 flex items-center justify-center ticket-perforation-l py-3">
+        <div class="w-8 shrink-0 flex items-center justify-center py-3">
           <span class="vertical-top-to-bottom text-[9px] tracking-[0.2em] text-gray-300 font-bold uppercase select-none">
             INDIAN RAILWAYS
           </span>
+        </div>
+
+        <!-- Left Perforation Dashed Line (Inline SVG - 100% Guaranteed on iPhone Safari) -->
+        <div class="w-[2px] shrink-0 self-stretch my-2 flex items-center justify-center">
+          <svg class="w-[2px] h-full" preserveAspectRatio="none" viewBox="0 0 2 100">
+            <line x1="1" y1="0" x2="1" y2="100" stroke="#ffffff" stroke-opacity="0.8" stroke-width="2" stroke-dasharray="4,4" vector-effect="non-scaling-stroke" />
+          </svg>
         </div>
 
         <!-- Center Ticket Info -->
         <div class="grow text-center py-2.5 px-2">
           <p class="text-[12px] text-gray-200 font-medium">Dynamic preview will close in</p>
           
-          <!-- Clean, Rock-Solid 1-Second Countdown in Bold Sans -->
+          <!-- Clean 1-Second Countdown in Bold Sans -->
           <div class="my-1 flex items-center justify-center">
             <span id="countdown" class="text-[36px] font-black text-[#ff2a2a] tracking-tight leading-none font-sans drop-shadow-sm">05:00</span>
           </div>
@@ -84,8 +91,15 @@
           </div>
         </div>
 
+        <!-- Right Perforation Dashed Line (Inline SVG - 100% Guaranteed on iPhone Safari) -->
+        <div class="w-[2px] shrink-0 self-stretch my-2 flex items-center justify-center">
+          <svg class="w-[2px] h-full" preserveAspectRatio="none" viewBox="0 0 2 100">
+            <line x1="1" y1="0" x2="1" y2="100" stroke="#ffffff" stroke-opacity="0.8" stroke-width="2" stroke-dasharray="4,4" vector-effect="non-scaling-stroke" />
+          </svg>
+        </div>
+
         <!-- Right Stub: भारतीय रेल (Reads TOP-TO-BOTTOM) -->
-        <div class="w-9 shrink-0 flex items-center justify-center ticket-perforation-r py-3">
+        <div class="w-8 shrink-0 flex items-center justify-center py-3">
           <span class="vertical-top-to-bottom text-[9.5px] tracking-[0.16em] text-gray-300 font-bold select-none">
             भारतीय रेल
           </span>
@@ -243,7 +257,7 @@
     </div>
   </main>
 
-  <!-- Modular Scripts -->
-  <script src="js/app.js"></script>
+  <!-- Modular Scripts with Cache Busting -->
+  <script src="js/app.js?v=2.1"></script>
 </body>
 </html>
