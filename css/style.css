@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
 
 /* ==========================================================================
    Base & Mobile Environment Optimization
@@ -137,25 +137,20 @@ html, body {
    3. Dynamic Preview Card
    ========================================================================== */
 .dynamic-card {
-  background-color: #151618;
-  background-image: 
-    linear-gradient(135deg, #27292c 25%, transparent 25%),
-    linear-gradient(225deg, #27292c 25%, transparent 25%),
-    linear-gradient(315deg, #27292c 25%, transparent 25%),
-    linear-gradient(45deg, #27292c 25%, transparent 25%);
-  background-position: -13px 0, -13px 0, 0 0, 0 0;
-  background-size: 26px 38px;
+  background-color: #141517;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='52' viewBox='0 0 32 52'%3E%3Crect width='32' height='52' fill='%23141517'/%3E%3Cpolygon points='16,0 32,26 16,52 0,26' fill='%2326282b'/%3E%3C/svg%3E");
+  background-size: 32px 52px;
   background-repeat: repeat;
   border-radius: 14px;
-  border-top: 5px solid #76c043;
+  border-top: 5px solid #7ec344;
   color: #ffffff;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: stretch;
-  min-height: 185px;
+  min-height: 196px;
   font-family: 'Poppins', sans-serif;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
 }
 
 .card-stub-left {
@@ -164,42 +159,54 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .card-stub-right {
-  width: 44px;
+  width: 48px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 0;
-}
-
-.vertical-text {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  color: #e5e7eb;
-  font-weight: 700;
-  user-select: none;
+  position: relative;
+  overflow: hidden;
 }
 
 .stub-left-text {
-  font-size: 11px;
-  letter-spacing: 0.26em;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  white-space: nowrap;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.30em;
+  color: #ffffff;
   text-transform: uppercase;
+  user-select: none;
 }
 
 .stub-right-text {
-  font-size: 11.5px;
-  letter-spacing: 0.2em;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  white-space: nowrap;
+  font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+  font-size: 15.5px;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  color: #ffffff;
+  user-select: none;
 }
 
 .stub-divider {
   width: 2px;
   flex-shrink: 0;
   align-self: stretch;
-  margin: 8px 0;
+  margin: 6px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -208,7 +215,7 @@ html, body {
 .dynamic-center {
   flex-grow: 1;
   text-align: center;
-  padding: 14px 6px;
+  padding: 12px 6px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -228,21 +235,23 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 50px;
-  font-weight: 900;
-  color: #ff2a2a;
+  font-size: 48px;
+  font-weight: 700;
+  color: #ff3b1e;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .colon-separator {
-  margin: 0 2px;
+  margin: 0 1px;
+  font-weight: 700;
+  color: #ff3b1e;
 }
 
 .ticker-viewport {
   display: inline-block;
-  height: 52px;
-  line-height: 52px;
+  height: 48px;
+  line-height: 48px;
   overflow: hidden;
   vertical-align: middle;
 }
@@ -254,38 +263,40 @@ html, body {
 }
 
 .ticker-cell {
-  height: 52px;
-  line-height: 52px;
+  height: 48px;
+  line-height: 48px;
   text-align: center;
+  font-weight: 700;
+  color: #ff3b1e;
 }
 
 .booking-date-label {
-  font-size: 13.5px;
-  color: #e5e7eb;
+  font-size: 12.5px;
+  color: #d1d5db;
   font-weight: 600;
   margin: 0;
 }
 
 .booking-date-value {
-  font-size: 24px;
-  font-weight: 800;
+  font-size: 23px;
+  font-weight: 700;
   color: #f59e0b;
   margin: 2px 0 0 0;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   line-height: 1.1;
 }
 
 .reference-text {
-  font-size: 12.5px;
-  color: #e5e7eb;
+  font-size: 11.5px;
+  color: #9ca3af;
   font-weight: 600;
-  margin: 4px 0 0 0;
+  margin: 3px 0 0 0;
 }
 
 .nontransferable-text {
   font-size: 12px;
-  color: #d1d5db;
-  font-weight: 500;
+  color: #e5e7eb;
+  font-weight: 600;
   margin: 2px 0 0 0;
 }
 
@@ -485,3 +496,4 @@ html, body {
   color: #6b7280;
   margin: 0;
 }
+
