@@ -18,20 +18,20 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
   <!-- Modular Stylesheet with Cache Busting -->
-  <link rel="stylesheet" href="css/style.css?v=2.1" />
+  <link rel="stylesheet" href="css/style.css?v=2.2" />
 </head>
 <body class="bg-[#f0f2f5] min-h-screen flex justify-center items-start text-gray-800">
 
-  <!-- Mobile Viewport Frame (Full width on phone, centered on desktop) -->
-  <main class="w-full max-w-[430px] min-h-screen bg-[#f0f2f5] flex flex-col pb-12">
+  <!-- Mobile Viewport Frame (Exact 434px max-width matching original device) -->
+  <main class="w-full max-w-[434px] min-h-screen bg-[#f0f2f5] flex flex-col pb-12">
 
     <!-- ========================================== -->
-    <!-- SECTION 1: APP BAR (Electric Royal Blue)   -->
+    <!-- SECTION 1: APP BAR (Height 67px, #005bf5)  -->
     <!-- ========================================== -->
-    <header class="bg-[#005bf5] text-white px-4 pt-4 pb-3 flex items-center justify-between shadow-xs sticky top-0 z-30">
+    <header class="bg-[#005bf5] text-white px-4 h-[67px] flex items-center justify-between shadow-xs sticky top-0 z-30">
       <div class="flex items-center gap-3">
         <!-- Circular outlined back button -->
-        <button class="w-8 h-8 rounded-full border border-white/70 flex items-center justify-center hover:bg-white/10 active:scale-95 transition" aria-label="Back">
+        <button class="w-[32px] h-[32px] rounded-full border border-white/70 flex items-center justify-center hover:bg-white/10 active:scale-95 transition" aria-label="Back">
           <i data-lucide="arrow-left" class="w-4 h-4 text-white stroke-[2.5]"></i>
         </button>
         <div>
@@ -47,26 +47,26 @@
       </button>
     </header>
 
-    <div class="px-3.5 pt-3 space-y-3">
+    <div class="px-[13px] pt-3 space-y-2.5">
       
-      <!-- Greeting Banner (Rounded-xl matching video) -->
-      <div class="bg-[#edf7ed] text-[#1e6b37] text-[12.5px] font-medium py-2 px-3 rounded-xl text-center shadow-xs">
+      <!-- Greeting Banner (Exact 45px height, rounded-xl) -->
+      <div class="bg-[#ebf8ee] text-[#1e6b37] text-[12px] font-medium h-[45px] px-3 rounded-xl flex items-center justify-center text-center shadow-xs">
         Thank You Kapadia Om Vipulkumar, Happy Journey !
       </div>
 
       <!-- ========================================== -->
-      <!-- SECTION 2: DYNAMIC PREVIEW & TIMER CARD    -->
+      <!-- SECTION 2: DYNAMIC PREVIEW (Height 167px)  -->
       <!-- ========================================== -->
-      <section class="bg-argyle rounded-xl border-t-[4px] border-[#76c043] text-white relative overflow-hidden shadow-md flex items-stretch">
+      <section class="bg-argyle rounded-xl border-t-[4px] border-[#76c043] text-white relative overflow-hidden shadow-md flex items-stretch min-h-[167px]">
         
         <!-- Left Stub: INDIAN RAILWAYS (Reads TOP-TO-BOTTOM) -->
-        <div class="w-8 shrink-0 flex items-center justify-center py-3">
+        <div class="w-8 shrink-0 flex items-center justify-center py-2">
           <span class="vertical-top-to-bottom text-[9px] tracking-[0.2em] text-gray-300 font-bold uppercase select-none">
             INDIAN RAILWAYS
           </span>
         </div>
 
-        <!-- Left Perforation Dashed Line (Inline SVG - 100% Guaranteed on iPhone Safari) -->
+        <!-- Left Perforation Dashed Line (Inline SVG) -->
         <div class="w-[2px] shrink-0 self-stretch my-2 flex items-center justify-center">
           <svg class="w-[2px] h-full" preserveAspectRatio="none" viewBox="0 0 2 100">
             <line x1="1" y1="0" x2="1" y2="100" stroke="#ffffff" stroke-opacity="0.8" stroke-width="2" stroke-dasharray="4,4" vector-effect="non-scaling-stroke" />
@@ -74,24 +74,26 @@
         </div>
 
         <!-- Center Ticket Info -->
-        <div class="grow text-center py-2.5 px-2">
+        <div class="grow text-center py-3 px-2 flex flex-col justify-between">
           <p class="text-[12px] text-gray-200 font-medium">Dynamic preview will close in</p>
           
           <!-- Clean 1-Second Countdown in Bold Sans -->
-          <div class="my-1 flex items-center justify-center">
-            <span id="countdown" class="text-[36px] font-black text-[#ff2a2a] tracking-tight leading-none font-sans drop-shadow-sm">05:00</span>
+          <div class="my-0.5 flex items-center justify-center">
+            <span id="countdown" class="text-[34px] font-black text-[#ff2a2a] tracking-tight leading-none font-sans drop-shadow-sm">05:00</span>
           </div>
 
-          <p class="text-[12px] text-gray-300 font-normal">Ticket Booking Date & Time</p>
-          <p class="text-[17.5px] font-bold text-[#f59e0b] mt-0.5 tracking-tight leading-snug">29 Oct 2026, 07:25</p>
+          <div>
+            <p class="text-[11px] text-gray-300 font-normal">Ticket Booking Date & Time</p>
+            <p class="text-[17px] font-bold text-[#f59e0b] mt-0.5 tracking-tight leading-snug">29 Oct 2026, 07:25</p>
+          </div>
           
-          <div class="mt-1.5 text-[11px] text-gray-300 space-y-0.5">
+          <div class="text-[11px] text-gray-300 leading-tight">
             <span class="block font-medium">R19112</span>
-            <span class="block text-[10.5px] text-gray-400">Ticket is Non-Transferable</span>
+            <span class="block text-[10.5px] text-gray-400 mt-0.5">Ticket is Non-Transferable</span>
           </div>
         </div>
 
-        <!-- Right Perforation Dashed Line (Inline SVG - 100% Guaranteed on iPhone Safari) -->
+        <!-- Right Perforation Dashed Line (Inline SVG) -->
         <div class="w-[2px] shrink-0 self-stretch my-2 flex items-center justify-center">
           <svg class="w-[2px] h-full" preserveAspectRatio="none" viewBox="0 0 2 100">
             <line x1="1" y1="0" x2="1" y2="100" stroke="#ffffff" stroke-opacity="0.8" stroke-width="2" stroke-dasharray="4,4" vector-effect="non-scaling-stroke" />
@@ -99,7 +101,7 @@
         </div>
 
         <!-- Right Stub: भारतीय रेल (Reads TOP-TO-BOTTOM) -->
-        <div class="w-8 shrink-0 flex items-center justify-center py-3">
+        <div class="w-8 shrink-0 flex items-center justify-center py-2">
           <span class="vertical-top-to-bottom text-[9.5px] tracking-[0.16em] text-gray-300 font-bold select-none">
             भारतीय रेल
           </span>
@@ -107,131 +109,125 @@
       </section>
 
       <!-- ========================================== -->
-      <!-- SECTION 3: TICKET DETAILS CARD             -->
-      <!-- Pure white card without top green band     -->
+      <!-- SECTION 3: TICKET DETAILS (Exact 360px)   -->
       <!-- ========================================== -->
-      <section class="rounded-2xl bg-white shadow-sm overflow-hidden border border-gray-100">
+      <section class="rounded-2xl bg-white shadow-sm overflow-hidden border border-gray-100 flex flex-col justify-between">
         
-        <div class="p-4 space-y-3.5">
+        <div class="px-4 pt-3.5 pb-2">
           <!-- Season Ticket Number & Active Status -->
-          <div class="flex justify-between items-start">
+          <div class="flex justify-between items-center mb-2.5">
             <div>
-              <p class="text-[12px] text-gray-500 font-normal">Season Ticket</p>
-              <p class="text-[16px] font-bold text-black tracking-wide mt-0.5">X53JEHL010</p>
+              <p class="text-[11.5px] text-gray-500 font-normal leading-none">Season Ticket</p>
+              <p class="text-[16px] font-bold text-black tracking-wide mt-1 leading-none">X53JEHL010</p>
             </div>
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[12px] font-bold bg-[#e8f5e9] text-[#2e7d32]">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11.5px] font-bold bg-[#e8f5e9] text-[#2e7d32]">
               <span class="w-2 h-2 rounded-full bg-[#4caf50]"></span>
               ACTIVE
             </span>
           </div>
 
-          <!-- 2-Column Info Grid: Left column text-left, Right column text-right -->
-          <div class="grid grid-cols-2 gap-y-3.5 gap-x-4 text-[13px] pt-1 border-t border-gray-100">
-            <!-- Left: Source -->
+          <!-- 2-Column Info Grid (Compact pixel-matched rows) -->
+          <div class="grid grid-cols-2 gap-y-2 gap-x-4 border-t border-gray-100 pt-2 text-[13px]">
+            <!-- Row 1: Source & Destination -->
             <div>
-              <span class="text-gray-500 text-[12px] font-normal block">Source</span>
-              <span class="font-bold text-black text-[14px]">ANKLESHWAR JN.</span>
+              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Source</span>
+              <span class="font-bold text-black text-[13.5px] leading-tight block">ANKLESHWAR JN.</span>
             </div>
-            <!-- Right: Destination (Right Aligned) -->
             <div class="text-right">
-              <span class="text-gray-500 text-[12px] font-normal block">Destination</span>
-              <span class="font-bold text-black text-[14px]">SURAT</span>
+              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Destination</span>
+              <span class="font-bold text-black text-[13.5px] leading-tight block">SURAT</span>
             </div>
 
-            <!-- Left: Distance -->
+            <!-- Row 2: Distance & Booked on -->
             <div>
-              <span class="text-gray-500 text-[12px] font-normal block">Distance</span>
-              <span class="font-bold text-black text-[14px]">50 km</span>
+              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Distance</span>
+              <span class="font-bold text-black text-[13.5px] leading-tight block">50 km</span>
             </div>
-            <!-- Right: Booked on (Right Aligned) -->
             <div class="text-right">
-              <span class="text-gray-500 text-[12px] font-normal block">Booked on</span>
-              <span class="font-bold text-black text-[14px]">29/10/2026 07:25</span>
+              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Booked on</span>
+              <span class="font-bold text-black text-[13.5px] leading-tight block">29/10/2026 07:25</span>
             </div>
 
-            <!-- Left: Ticket Type -->
+            <!-- Row 3: Ticket Type & Train Types -->
             <div>
-              <span class="text-gray-500 text-[12px] font-normal block">Ticket Type</span>
-              <span class="font-bold text-black text-[14px]">MONTHLY</span>
+              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Ticket Type</span>
+              <span class="font-bold text-black text-[13.5px] leading-tight block">MONTHLY</span>
             </div>
-            <!-- Right: Train Types (Right Aligned) -->
             <div class="text-right">
-              <span class="text-gray-500 text-[12px] font-normal block">Train Types</span>
-              <span class="font-bold text-black text-[14px]">MAIL/EXPRESS</span>
+              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Train Types</span>
+              <span class="font-bold text-black text-[13.5px] leading-tight block">MAIL/EXPRESS</span>
             </div>
 
-            <!-- Left: Class -->
+            <!-- Row 4: Class & Fare -->
             <div>
-              <span class="text-gray-500 text-[12px] font-normal block">Class</span>
-              <span class="font-bold text-black text-[14px]">SECOND</span>
+              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Class</span>
+              <span class="font-bold text-black text-[13.5px] leading-tight block">SECOND</span>
             </div>
-            <!-- Right: Fare (Right Aligned) -->
             <div class="text-right">
-              <span class="text-gray-500 text-[12px] font-normal block">Fare</span>
-              <span class="font-bold text-black text-[14px]">270.00</span>
+              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Fare</span>
+              <span class="font-bold text-black text-[13.5px] leading-tight block">270.00</span>
             </div>
 
-            <!-- Left: Valid From -->
+            <!-- Row 5: Valid From & Valid Upto -->
             <div>
-              <span class="text-gray-500 text-[12px] font-normal block">Valid From</span>
-              <span class="font-bold text-black text-[14px]">30/10/2026</span>
+              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Valid From</span>
+              <span class="font-bold text-black text-[13.5px] leading-tight block">30/10/2026</span>
             </div>
-            <!-- Right: Valid Upto (Right Aligned) -->
             <div class="text-right">
-              <span class="text-gray-500 text-[12px] font-normal block">Valid Upto</span>
-              <span class="font-bold text-black text-[14px]">29/11/2026</span>
+              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Valid Upto</span>
+              <span class="font-bold text-black text-[13.5px] leading-tight block">29/11/2026</span>
             </div>
           </div>
 
           <!-- Via Route Strip -->
-          <div class="flex items-center gap-2 bg-[#f9fafb] border border-gray-200/70 rounded-xl px-3 py-2 text-[12px] text-gray-600">
+          <div class="flex items-center gap-2 bg-[#f9fafb] border border-gray-200/70 rounded-xl px-3 py-1.5 text-[11.5px] text-gray-600 mt-2">
             <i data-lucide="share-2" class="w-3.5 h-3.5 text-gray-500 stroke-[2.2]"></i>
             <span class="font-normal text-gray-600">Via: ------</span>
           </div>
 
-          <!-- Passenger Details Section (Right column text-right) -->
-          <div class="grid grid-cols-2 gap-y-3 gap-x-4 text-[13px] pt-1">
+          <!-- Passenger Details Section -->
+          <div class="grid grid-cols-2 gap-y-1.5 gap-x-4 mt-2 text-[13px]">
             <div>
-              <span class="text-gray-500 text-[12px] font-normal block">Name</span>
-              <span class="font-bold text-black text-[14px]">Kapadia Om Vipulkuma</span>
+              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Name</span>
+              <span class="font-bold text-black text-[13.5px] leading-tight block">Kapadia Om Vipulkuma</span>
             </div>
             <div class="text-right">
-              <span class="text-gray-500 text-[12px] font-normal block">Age</span>
-              <span class="font-bold text-black text-[14px]">24 years</span>
+              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Age</span>
+              <span class="font-bold text-black text-[13.5px] leading-tight block">24 years</span>
             </div>
 
             <div>
-              <span class="text-gray-500 text-[12px] font-normal block">ID Type*</span>
-              <span class="font-bold text-black text-[14px]">PAN Card</span>
+              <span class="text-gray-500 text-[11px] font-normal leading-tight block">ID Type*</span>
+              <span class="font-bold text-black text-[13.5px] leading-tight block">PAN Card</span>
             </div>
             <div class="text-right">
-              <span class="text-gray-500 text-[12px] font-normal block">ID Number</span>
-              <span class="font-bold text-black text-[14px]">MNBPK7746M</span>
+              <span class="text-gray-500 text-[11px] font-normal leading-tight block">ID Number</span>
+              <span class="font-bold text-black text-[13.5px] leading-tight block">MNBPK7746M</span>
             </div>
           </div>
         </div>
 
-        <!-- Bottom Accent Strip (Matches Photo) -->
-        <div class="h-2 bg-[#a3e635]"></div>
+        <!-- Bottom Accent Strip (8px height) -->
+        <div class="h-[8px] bg-[#a3e635] w-full"></div>
       </section>
 
       <!-- ========================================== -->
-      <!-- SECTION 4: WARNING ADVISORY                -->
+      <!-- SECTION 4: WARNING ADVISORY (Height 61px)  -->
       <!-- ========================================== -->
-      <div class="bg-[#fdeeed] rounded-xl py-2.5 px-4 text-center">
-        <p class="text-[11.5px] leading-[1.45] text-[#c53030] font-normal">
+      <div class="bg-[#fdeeed] rounded-xl py-2 px-3 text-center min-h-[58px] flex items-center justify-center">
+        <p class="text-[11.5px] leading-[1.38] text-[#c53030] font-normal">
           Note: This ticket is non refundable. Ticket is stored locally on the device. Please do not change your handset or perform factory reset.
         </p>
       </div>
 
       <!-- ========================================== -->
-      <!-- SECTION 5: ACTION BUTTON & QR CODE         -->
+      <!-- SECTION 5: ACTION BUTTON (Height 45px)     -->
       <!-- ========================================== -->
-      <button class="w-full bg-[#0062f5] hover:bg-[#0052cc] active:scale-[0.99] text-white font-medium py-3 px-4 rounded-full shadow transition text-[15px] tracking-wide">
+      <button class="w-full bg-[#0062f5] hover:bg-[#0052cc] active:scale-[0.99] text-white font-medium h-[45px] rounded-full shadow transition text-[15px] tracking-wide flex items-center justify-center">
         Upgrade to Superfast
       </button>
 
-      <!-- Centered High-Density QR Code Card (200px width) -->
+      <!-- Centered QR Code Card -->
       <div class="bg-white py-6 px-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center">
         <div id="qrcode" class="flex justify-center"></div>
       </div>
@@ -258,6 +254,6 @@
   </main>
 
   <!-- Modular Scripts with Cache Busting -->
-  <script src="js/app.js?v=2.1"></script>
+  <script src="js/app.js?v=2.2"></script>
 </body>
 </html>
