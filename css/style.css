@@ -21,16 +21,16 @@ body, button, input, select, textarea {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Genuine Argyle Diamond Tile Background */
+/* Genuine Diamond Argyle Grid (Large Alternating Rhombuses) */
 .bg-argyle {
-  background-color: #18191b;
+  background-color: #17181a;
   background-image: 
-    linear-gradient(135deg, #25272a 25%, transparent 25%),
-    linear-gradient(225deg, #25272a 25%, transparent 25%),
-    linear-gradient(315deg, #25272a 25%, transparent 25%),
-    linear-gradient(45deg, #25272a 25%, transparent 25%);
-  background-position: -18px 0, -18px 0, 0 0, 0 0;
-  background-size: 36px 48px;
+    linear-gradient(135deg, #242629 25%, transparent 25%),
+    linear-gradient(225deg, #242629 25%, transparent 25%),
+    linear-gradient(315deg, #242629 25%, transparent 25%),
+    linear-gradient(45deg, #242629 25%, transparent 25%);
+  background-position: -20px 0, -20px 0, 0 0, 0 0;
+  background-size: 40px 52px;
   background-repeat: repeat;
 }
 
@@ -38,33 +38,4 @@ body, button, input, select, textarea {
 .vertical-top-to-bottom {
   writing-mode: vertical-rl;
   text-orientation: mixed;
-}
-
-/* Perforated ticket stub vertical dashed lines (Guaranteed visible on iOS Safari / Retina) */
-.ticket-perforation-l {
-  background-image: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.85) 0px,
-    rgba(255, 255, 255, 0.85) 5px,
-    transparent 5px,
-    transparent 10px
-  );
-  background-size: 2px 100%;
-  background-position: right top;
-  background-repeat: no-repeat;
-  padding-right: 3px;
-}
-
-.ticket-perforation-r {
-  background-image: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.85) 0px,
-    rgba(255, 255, 255, 0.85) 5px,
-    transparent 5px,
-    transparent 10px
-  );
-  background-size: 2px 100%;
-  background-position: left top;
-  background-repeat: no-repeat;
-  padding-left: 3px;
 }
