@@ -17,7 +17,7 @@
 </head>
 <body class="bg-gray-200 min-h-screen flex justify-center items-start sm:py-6 text-gray-800">
 
-  <!-- Mobile Viewport Frame (Soft grey app background like native iOS) -->
+  <!-- Mobile Viewport Frame (Soft grey app background) -->
   <main class="w-full max-w-[420px] bg-[#f0f2f5] sm:rounded-[36px] shadow-2xl overflow-hidden flex flex-col pb-10">
 
     <!-- ========================================== -->
@@ -25,34 +25,38 @@
     <!-- ========================================== -->
     <header class="bg-[#0052cc] text-white px-4 pt-3.5 pb-3 flex items-center justify-between shadow-sm">
       <div class="flex items-center gap-3">
-        <button class="w-9 h-9 rounded-full border border-white/60 flex items-center justify-center hover:bg-white/10 active:scale-95 transition" aria-label="Back">
-          <i data-lucide="arrow-left" class="w-5 h-5 text-white stroke-[2.2]"></i>
+        <!-- Thin outlined circular back button -->
+        <button class="w-8 h-8 rounded-full border border-white/70 flex items-center justify-center hover:bg-white/10 active:scale-95 transition" aria-label="Back">
+          <i data-lucide="arrow-left" class="w-4 h-4 text-white stroke-[2.5]"></i>
         </button>
         <div>
           <h1 class="text-[17px] font-bold leading-tight tracking-tight">Booking Details</h1>
           <p class="text-[12px] text-blue-100/90 font-normal">Mobile: 8980189932</p>
         </div>
       </div>
+      <!-- Right document icon with 3 horizontal stripes matching photo -->
       <button class="p-1 hover:bg-white/10 rounded-lg transition" aria-label="Menu">
-        <i data-lucide="receipt-text" class="w-6 h-6 text-white stroke-[2]"></i>
+        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h12a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm3 4a1 1 0 011-1h8a1 1 0 110 2H8a1 1 0 01-1-1zm0 4a1 1 0 011-1h8a1 1 0 110 2H8a1 1 0 01-1-1zm0 4a1 1 0 011-1h8a1 1 0 110 2H8a1 1 0 01-1-1z" clip-rule="evenodd" />
+        </svg>
       </button>
     </header>
 
     <div class="px-3.5 pt-3 space-y-3">
       
-      <!-- Greeting Pill Banner -->
-      <div class="bg-[#edf7ed] text-[#1e6b37] text-[12.5px] font-medium py-1.5 px-3 rounded-full text-center shadow-xs">
+      <!-- Greeting Banner (Rounded-xl matching photo) -->
+      <div class="bg-[#edf7ed] text-[#1e6b37] text-[12.5px] font-medium py-2 px-3 rounded-xl text-center shadow-xs">
         Thank You Kapadia Om Vipulkumar, Happy Journey !
       </div>
 
       <!-- ========================================== -->
       <!-- SECTION 2: DYNAMIC PREVIEW & TIMER CARD    -->
       <!-- ========================================== -->
-      <section class="bg-argyle rounded-xl border-t-[5px] border-[#76c043] text-white relative overflow-hidden shadow-md flex items-stretch">
+      <section class="bg-argyle rounded-xl border-t-[4px] border-[#76c043] text-white relative overflow-hidden shadow-md flex items-stretch">
         
-        <!-- Left Stub: INDIAN RAILWAYS + Dashed Perforation -->
+        <!-- Left Stub: INDIAN RAILWAYS (Reads TOP-TO-BOTTOM) -->
         <div class="w-9 shrink-0 flex items-center justify-center ticket-perforation-l py-4">
-          <span class="vertical-rl text-[9px] tracking-[0.2em] text-gray-400 font-bold uppercase select-none">
+          <span class="vertical-top-to-bottom text-[9.5px] tracking-[0.22em] text-gray-300 font-bold uppercase select-none">
             INDIAN RAILWAYS
           </span>
         </div>
@@ -61,10 +65,10 @@
         <div class="grow text-center py-3 px-2">
           <p class="text-[12px] text-gray-200 font-medium">Dynamic preview will close in</p>
           
-          <!-- Animated Rolling Slot-Machine Countdown -->
-          <div class="text-4xl font-extrabold text-[#ff2a2a] tracking-wider my-0.5 drop-shadow-sm font-['JetBrains_Mono',monospace] flex items-center justify-center">
+          <!-- Animated Rolling Countdown -->
+          <div class="text-4xl font-extrabold text-[#ff3333] tracking-wider my-0.5 drop-shadow-sm font-['JetBrains_Mono',monospace] flex items-center justify-center">
             <span id="timer-min">04</span>
-            <span class="mx-0.5 animate-pulse">:</span>
+            <span class="mx-0.5">:</span>
             <div class="ticker-window">
               <div id="ticker-reel" class="ticker-reel">
                 <span class="ticker-digit" id="current-sec">55</span>
@@ -74,7 +78,7 @@
           </div>
 
           <p class="text-[12px] text-gray-300">Ticket Booking Date & Time</p>
-          <p class="text-[15px] font-bold text-[#f59e0b] mt-0.5 tracking-wide">29 Oct 2026, 07:25</p>
+          <p class="text-[15.5px] font-bold text-[#f59e0b] mt-0.5 tracking-wide">29 Oct 2026, 07:25</p>
           
           <div class="mt-2 text-[11px] text-gray-300 space-y-0.5">
             <span class="block font-medium">R19112</span>
@@ -82,9 +86,9 @@
           </div>
         </div>
 
-        <!-- Right Stub: भारतीय रेल + Dashed Perforation -->
+        <!-- Right Stub: भारतीय रेल (Reads TOP-TO-BOTTOM) -->
         <div class="w-9 shrink-0 flex items-center justify-center ticket-perforation-r py-4">
-          <span class="vertical-rl text-[10px] tracking-[0.18em] text-gray-400 font-bold select-none">
+          <span class="vertical-top-to-bottom text-[10px] tracking-[0.18em] text-gray-300 font-bold select-none">
             भारतीय रेल
           </span>
         </div>
@@ -101,85 +105,85 @@
           <div class="flex justify-between items-start">
             <div>
               <p class="text-[12px] text-gray-500 font-normal">Season Ticket</p>
-              <p class="text-[16px] font-bold text-gray-900 tracking-wide mt-0.5">X53JEHL010</p>
+              <p class="text-[16px] font-bold text-black tracking-wide mt-0.5">X53JEHL010</p>
             </div>
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[12px] font-bold bg-[#dcfce7] text-[#15803d]">
-              <span class="w-2 h-2 rounded-full bg-[#22c55e]"></span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[12px] font-bold bg-[#e8f5e9] text-[#2e7d32]">
+              <span class="w-2 h-2 rounded-full bg-[#4caf50]"></span>
               ACTIVE
             </span>
           </div>
 
-          <!-- 2-Column Info Grid with Title Case labels -->
+          <!-- 2-Column Info Grid: Black bold values + Gray labels -->
           <div class="grid grid-cols-2 gap-y-3.5 gap-x-4 text-[13px] pt-1 border-t border-gray-100">
             <div>
-              <span class="text-gray-500 text-[12px] block">Source</span>
-              <span class="font-bold text-gray-900 text-[14px]">ANKLESHWAR JN.</span>
+              <span class="text-gray-500 text-[12px] font-normal block">Source</span>
+              <span class="font-bold text-black text-[14px]">ANKLESHWAR JN.</span>
             </div>
             <div>
-              <span class="text-gray-500 text-[12px] block">Destination</span>
-              <span class="font-bold text-gray-900 text-[14px]">SURAT</span>
-            </div>
-
-            <div>
-              <span class="text-gray-500 text-[12px] block">Distance</span>
-              <span class="font-bold text-gray-900 text-[14px]">50 km</span>
-            </div>
-            <div>
-              <span class="text-gray-500 text-[12px] block">Booked on</span>
-              <span class="font-bold text-gray-900 text-[14px]">29/10/2026 07:25</span>
+              <span class="text-gray-500 text-[12px] font-normal block">Destination</span>
+              <span class="font-bold text-black text-[14px]">SURAT</span>
             </div>
 
             <div>
-              <span class="text-gray-500 text-[12px] block">Ticket Type</span>
-              <span class="font-bold text-gray-900 text-[14px]">MONTHLY</span>
+              <span class="text-gray-500 text-[12px] font-normal block">Distance</span>
+              <span class="font-bold text-black text-[14px]">50 km</span>
             </div>
             <div>
-              <span class="text-gray-500 text-[12px] block">Train Types</span>
-              <span class="font-bold text-gray-900 text-[14px]">MAIL/EXPRESS</span>
-            </div>
-
-            <div>
-              <span class="text-gray-500 text-[12px] block">Class</span>
-              <span class="font-bold text-gray-900 text-[14px]">SECOND</span>
-            </div>
-            <div>
-              <span class="text-gray-500 text-[12px] block">Fare</span>
-              <span class="font-bold text-gray-900 text-[14px]">270.00</span>
+              <span class="text-gray-500 text-[12px] font-normal block">Booked on</span>
+              <span class="font-bold text-black text-[14px]">29/10/2026 07:25</span>
             </div>
 
             <div>
-              <span class="text-gray-500 text-[12px] block">Valid From</span>
-              <span class="font-bold text-gray-900 text-[14px]">30/10/2026</span>
+              <span class="text-gray-500 text-[12px] font-normal block">Ticket Type</span>
+              <span class="font-bold text-black text-[14px]">MONTHLY</span>
             </div>
             <div>
-              <span class="text-gray-500 text-[12px] block">Valid Upto</span>
-              <span class="font-bold text-gray-900 text-[14px]">29/11/2026</span>
+              <span class="text-gray-500 text-[12px] font-normal block">Train Types</span>
+              <span class="font-bold text-black text-[14px]">MAIL/EXPRESS</span>
+            </div>
+
+            <div>
+              <span class="text-gray-500 text-[12px] font-normal block">Class</span>
+              <span class="font-bold text-black text-[14px]">SECOND</span>
+            </div>
+            <div>
+              <span class="text-gray-500 text-[12px] font-normal block">Fare</span>
+              <span class="font-bold text-black text-[14px]">270.00</span>
+            </div>
+
+            <div>
+              <span class="text-gray-500 text-[12px] font-normal block">Valid From</span>
+              <span class="font-bold text-black text-[14px]">30/10/2026</span>
+            </div>
+            <div>
+              <span class="text-gray-500 text-[12px] font-normal block">Valid Upto</span>
+              <span class="font-bold text-black text-[14px]">29/11/2026</span>
             </div>
           </div>
 
-          <!-- Via Route Strip -->
-          <div class="flex items-center gap-2 bg-[#f9fafb] border border-gray-200/80 rounded-xl px-3 py-2 text-[12px] text-gray-600">
+          <!-- Via Route Strip (No border divider beneath it) -->
+          <div class="flex items-center gap-2 bg-[#f9fafb] border border-gray-200/70 rounded-xl px-3 py-2 text-[12px] text-gray-600">
             <i data-lucide="share-2" class="w-3.5 h-3.5 text-gray-500 stroke-[2.2]"></i>
             <span class="font-normal text-gray-600">Via: ------</span>
           </div>
 
-          <!-- Passenger Details Section -->
-          <div class="grid grid-cols-2 gap-y-3 gap-x-4 text-[13px] pt-3 border-t border-gray-100">
+          <!-- Passenger Details Section (Seamless white space without dividing line) -->
+          <div class="grid grid-cols-2 gap-y-3 gap-x-4 text-[13px] pt-1">
             <div>
-              <span class="text-gray-500 text-[12px] block">Name</span>
-              <span class="font-bold text-gray-900 text-[14px]">Kapadia Om Vipulkuma</span>
+              <span class="text-gray-500 text-[12px] font-normal block">Name</span>
+              <span class="font-bold text-black text-[14px]">Kapadia Om Vipulkuma</span>
             </div>
             <div>
-              <span class="text-gray-500 text-[12px] block">Age</span>
-              <span class="font-bold text-gray-900 text-[14px]">24 years</span>
+              <span class="text-gray-500 text-[12px] font-normal block">Age</span>
+              <span class="font-bold text-black text-[14px]">24 years</span>
             </div>
             <div>
-              <span class="text-gray-500 text-[12px] block">ID Type*</span>
-              <span class="font-bold text-gray-900 text-[14px]">PAN Card</span>
+              <span class="text-gray-500 text-[12px] font-normal block">ID Type*</span>
+              <span class="font-bold text-black text-[14px]">PAN Card</span>
             </div>
             <div>
-              <span class="text-gray-500 text-[12px] block">ID Number</span>
-              <span class="font-bold text-gray-900 text-[14px]">MNBPK7746M</span>
+              <span class="text-gray-500 text-[12px] font-normal block">ID Number</span>
+              <span class="font-bold text-black text-[14px]">MNBPK7746M</span>
             </div>
           </div>
         </div>
@@ -192,7 +196,7 @@
       <!-- SECTION 4: WARNING ADVISORY                -->
       <!-- ========================================== -->
       <div class="bg-[#fdeeed] rounded-xl py-2.5 px-4 text-center">
-        <p class="text-[11.5px] leading-[1.45] text-[#b91c1c] font-normal">
+        <p class="text-[11.5px] leading-[1.45] text-[#c53030] font-normal">
           Note: This ticket is non refundable. Ticket is stored locally on the device. Please do not change your handset or perform factory reset.
         </p>
       </div>

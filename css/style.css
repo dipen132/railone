@@ -7,45 +7,50 @@ body, button, input, select, textarea {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Argyle / Diamond Texture */
+/* Genuine Argyle Diamond Tile Background */
 .bg-argyle {
   background-color: #17181a;
   background-image: 
-    repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.045) 1px, transparent 1px, transparent 28px),
-    repeating-linear-gradient(60deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.045) 1px, transparent 1px, transparent 28px);
+    linear-gradient(135deg, #242628 25%, transparent 25%),
+    linear-gradient(225deg, #242628 25%, transparent 25%),
+    linear-gradient(315deg, #242628 25%, transparent 25%),
+    linear-gradient(45deg, #242628 25%, transparent 25%);
+  background-position: -20px 0, -20px 0, 0 0, 0 0;
+  background-size: 40px 52px;
+  background-repeat: repeat;
 }
 
-/* Vertical text mode */
-.vertical-rl {
+/* Vertical text reading naturally TOP-TO-BOTTOM */
+.vertical-top-to-bottom {
   writing-mode: vertical-rl;
-  transform: rotate(180deg);
+  text-orientation: mixed;
 }
 
 /* Perforated ticket stub vertical dashed line */
 .ticket-perforation-l {
-  border-right: 1.5px dashed rgba(255, 255, 255, 0.28);
+  border-right: 1.5px dashed rgba(255, 255, 255, 0.35);
 }
 .ticket-perforation-r {
-  border-left: 1.5px dashed rgba(255, 255, 255, 0.28);
+  border-left: 1.5px dashed rgba(255, 255, 255, 0.35);
 }
 
 /* Rolling Digits Slot Machine Container */
 .ticker-window {
   display: inline-flex;
-  height: 44px;
+  height: 42px;
   overflow: hidden;
   vertical-align: middle;
-  line-height: 44px;
+  line-height: 42px;
 }
 
 .ticker-reel {
   display: flex;
   flex-direction: column;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .ticker-digit {
-  height: 44px;
-  line-height: 44px;
+  height: 42px;
+  line-height: 42px;
   text-align: center;
 }
