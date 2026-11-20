@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <meta name="theme-color" content="#0052cc" />
+  <meta name="theme-color" content="#005bf5" />
 
   <title>Booking Details - Indian Railways</title>
   
@@ -26,9 +26,9 @@
   <main class="w-full max-w-[430px] min-h-screen bg-[#f0f2f5] flex flex-col pb-12">
 
     <!-- ========================================== -->
-    <!-- SECTION 1: APP BAR (Royal Blue)            -->
+    <!-- SECTION 1: APP BAR (Electric Royal Blue)   -->
     <!-- ========================================== -->
-    <header class="bg-[#0052cc] text-white px-4 pt-4 pb-3 flex items-center justify-between shadow-xs sticky top-0 z-30">
+    <header class="bg-[#005bf5] text-white px-4 pt-4 pb-3 flex items-center justify-between shadow-xs sticky top-0 z-30">
       <div class="flex items-center gap-3">
         <!-- Circular outlined back button -->
         <button class="w-8 h-8 rounded-full border border-white/70 flex items-center justify-center hover:bg-white/10 active:scale-95 transition" aria-label="Back">
@@ -36,7 +36,7 @@
         </button>
         <div>
           <h1 class="text-[17px] font-bold leading-tight tracking-tight">Booking Details</h1>
-          <p class="text-[12px] text-blue-100/90 font-normal">Mobile: 8980189932</p>
+          <p class="text-[12px] text-blue-100 font-normal">Mobile: 8980189932</p>
         </div>
       </div>
       <!-- Right document icon with 3 horizontal stripes -->
@@ -49,7 +49,7 @@
 
     <div class="px-3.5 pt-3 space-y-3">
       
-      <!-- Greeting Banner (Rounded-xl matching photo) -->
+      <!-- Greeting Banner (Rounded-xl matching video) -->
       <div class="bg-[#edf7ed] text-[#1e6b37] text-[12.5px] font-medium py-2 px-3 rounded-xl text-center shadow-xs">
         Thank You Kapadia Om Vipulkumar, Happy Journey !
       </div>
@@ -60,18 +60,18 @@
       <section class="bg-argyle rounded-xl border-t-[4px] border-[#76c043] text-white relative overflow-hidden shadow-md flex items-stretch">
         
         <!-- Left Stub: INDIAN RAILWAYS (Reads TOP-TO-BOTTOM) -->
-        <div class="w-9 shrink-0 flex items-center justify-center ticket-perforation-l py-4">
-          <span class="vertical-top-to-bottom text-[9.5px] tracking-[0.22em] text-gray-300 font-bold uppercase select-none">
+        <div class="w-9 shrink-0 flex items-center justify-center ticket-perforation-l py-3">
+          <span class="vertical-top-to-bottom text-[9px] tracking-[0.2em] text-gray-300 font-bold uppercase select-none">
             INDIAN RAILWAYS
           </span>
         </div>
 
         <!-- Center Ticket Info -->
-        <div class="grow text-center py-3 px-2">
+        <div class="grow text-center py-2.5 px-2">
           <p class="text-[12px] text-gray-200 font-medium">Dynamic preview will close in</p>
           
-          <!-- Animated Rolling Countdown -->
-          <div class="text-4xl font-extrabold text-[#ff3333] tracking-wider my-0.5 drop-shadow-sm font-['JetBrains_Mono',monospace] flex items-center justify-center">
+          <!-- Animated Rolling Countdown in Clean Sans Font (NOT monospace) -->
+          <div class="text-[34px] font-black text-[#ff2a2a] tracking-tight my-0.5 drop-shadow-sm flex items-center justify-center">
             <span id="timer-min">04</span>
             <span class="mx-0.5">:</span>
             <div class="ticker-window">
@@ -82,18 +82,18 @@
             </div>
           </div>
 
-          <p class="text-[12px] text-gray-300">Ticket Booking Date & Time</p>
-          <p class="text-[15.5px] font-bold text-[#f59e0b] mt-0.5 tracking-wide">29 Oct 2026, 07:25</p>
+          <p class="text-[11.5px] text-gray-300 font-normal">Ticket Booking Date & Time</p>
+          <p class="text-[15px] font-bold text-[#f59e0b] mt-0.5 tracking-wide">29 Oct 2026, 07:25</p>
           
-          <div class="mt-2 text-[11px] text-gray-300 space-y-0.5">
+          <div class="mt-1.5 text-[11px] text-gray-300 space-y-0.5">
             <span class="block font-medium">R19112</span>
-            <span class="block text-[11px] text-gray-400">Ticket is Non-Transferable</span>
+            <span class="block text-[10.5px] text-gray-400">Ticket is Non-Transferable</span>
           </div>
         </div>
 
         <!-- Right Stub: भारतीय रेल (Reads TOP-TO-BOTTOM) -->
-        <div class="w-9 shrink-0 flex items-center justify-center ticket-perforation-r py-4">
-          <span class="vertical-top-to-bottom text-[10px] tracking-[0.18em] text-gray-300 font-bold select-none">
+        <div class="w-9 shrink-0 flex items-center justify-center ticket-perforation-r py-3">
+          <span class="vertical-top-to-bottom text-[9.5px] tracking-[0.16em] text-gray-300 font-bold select-none">
             भारतीय रेल
           </span>
         </div>
@@ -224,8 +224,8 @@
         Upgrade to Superfast
       </button>
 
-      <!-- Centered QR Code Card -->
-      <div class="bg-white py-5 px-3 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center">
+      <!-- Centered High-Density QR Code Card (200px width) -->
+      <div class="bg-white py-6 px-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center">
         <div id="qrcode" class="flex justify-center"></div>
       </div>
 

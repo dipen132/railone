@@ -6,13 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
     lucide.createIcons();
   }
 
-  // 2. High-Density Dynamic QR Code Generator
+  // 2. High-Density Dynamic QR Code Generator (200px size)
   const qrContainer = document.getElementById("qrcode");
   if (qrContainer && window.QRCode) {
     new QRCode(qrContainer, {
       text: "UTS:X53JEHL010|Kapadia Om Vipulkuma|ANKLESHWAR JN.-SURAT|270.00|30/10/2026-29/11/2026|MNBPK7746M",
-      width: 175,
-      height: 175,
+      width: 200,
+      height: 200,
       colorDark: "#000000",
       colorLight: "#ffffff",
       correctLevel: QRCode.CorrectLevel.M
@@ -48,8 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Force reflow
     void reelElem.offsetHeight;
 
-    reelElem.style.transition = 'transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1)';
-    reelElem.style.transform = 'translateY(-44px)';
+    reelElem.style.transition = 'transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1)';
+    reelElem.style.transform = 'translateY(-40px)';
   }
 
   // Run tick every second
