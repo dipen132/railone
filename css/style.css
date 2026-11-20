@@ -1,4 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+/* ==========================================================================
+   Indian Railways UTS / RailOne - Pixel-Perfect Production Stylesheet
+   Directly derived from official RailOne.apk assets & real device capture
+   ========================================================================== */
+
+@font-face {
+  font-family: 'NotoSansRailway';
+  src: url('../fonts/NotoSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'NotoSansRailway';
+  src: url('../fonts/NotoSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
 
 /* ==========================================================================
    Base & Mobile Environment Optimization
@@ -7,6 +25,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html,
@@ -17,7 +37,7 @@ body {
   padding: 0;
   background-color: #f0f2f5;
   color: #111827;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: 'NotoSansRailway', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -34,7 +54,7 @@ body {
    ========================================================================== */
 .app-container {
   width: 100%;
-  max-width: 434px;
+  max-width: 430px;
   min-height: 100vh;
   margin: 0 auto;
   background-color: #f0f2f5;
@@ -44,12 +64,12 @@ body {
 }
 
 /* ==========================================================================
-   1. App Header
+   1. App Header (Authentic CRIS Royal Blue)
    ========================================================================== */
 .app-header {
   background-color: #005bf5;
   color: #ffffff;
-  padding: calc(env(safe-area-inset-top, 0px) + 12px) 16px 14px 16px;
+  padding: calc(env(safe-area-inset-top, 0px) + 12px) 16px 12px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -59,11 +79,16 @@ body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
+.header-left-group {
+  display: flex;
+  align-items: center;
+}
+
 .back-btn {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  border: 1.5px solid rgba(255, 255, 255, 0.8);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
   background: transparent;
   display: flex;
   align-items: center;
@@ -71,6 +96,7 @@ body {
   cursor: pointer;
   padding: 0;
   color: #ffffff;
+  flex-shrink: 0;
 }
 
 .back-btn:active {
@@ -79,232 +105,259 @@ body {
 }
 
 .header-title-group {
-  margin-left: 12px;
+  margin-left: 14px;
   display: flex;
   flex-direction: column;
 }
 
 .header-title {
-  margin: 0;
-  font-size: 17.5px;
+  font-size: 17px;
   font-weight: 700;
   line-height: 1.2;
+  margin: 0;
+  color: #ffffff;
   letter-spacing: -0.01em;
 }
 
 .header-subtitle {
-  margin: 1px 0 0 0;
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 500;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.88);
+  margin-top: 1px;
 }
 
 .header-action-btn {
   background: transparent;
   border: none;
-  color: #ffffff;
+  cursor: pointer;
   padding: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  border-radius: 8px;
+}
+
+.header-ticket-img {
+  width: 22px;
+  height: 20px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 /* ==========================================================================
-   2. Content Wrapper & Greeting
+   2. Greeting Banner (Full-Width Flat White Header Bar)
    ========================================================================== */
-.app-content {
-  padding: 12px 13px 40px 13px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
 .greeting-banner {
-  background-color: #edf7ed;
-  color: #1b5e20;
-  font-size: 12.5px;
-  font-weight: 600;
-  height: 44px;
-  padding: 0 12px;
-  border-radius: 12px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  color: #4b5563;
+  font-size: 12px;
+  font-weight: 400;
+  height: 36px;
+  padding: 0 16px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: flex-start;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   letter-spacing: -0.01em;
 }
 
 /* ==========================================================================
-   3. Dynamic Preview Card
+   Main Content Area
+   ========================================================================== */
+.app-content {
+  padding: 14px 14px 28px 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   3. Dynamic Preview Card (Exact Ratio ~1.95:1)
    ========================================================================== */
 .dynamic-card {
-  background-color: #141517;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='52' viewBox='0 0 32 52'%3E%3Crect width='32' height='52' fill='%23141517'/%3E%3Cpolygon points='16,0 32,26 16,52 0,26' fill='%2325272b'/%3E%3C/svg%3E");
-  background-size: 32px 52px;
-  background-repeat: repeat;
-  border-radius: 14px;
+  background: #141517 url('../images/ticket_bcgrnd.png') center center / 100% 100% no-repeat;
+  border-radius: 12px;
   color: #ffffff;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: stretch;
-  min-height: 178px;
-  font-family: 'Poppins', sans-serif;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  min-height: 184px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 
-/* Lime green top accent bar - flush inside rounded corners */
+/* Top Accent Line (Lime Green Bar) */
 .dynamic-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 7px;
+  height: 4.5px;
   background-color: #84c43e;
-  z-index: 10;
-  border-radius: 14px 14px 0 0;
+  border-radius: 12px 12px 0 0;
+  z-index: 5;
 }
 
-/* Left stub: wider (60px ~ 15.8% matches real photo ratio) */
+/* Left Stub: INDIAN RAILWAYS */
 .card-stub-left {
   width: 58px;
   flex-shrink: 0;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
-  padding-top: 7px;
 }
 
-/* Right stub: narrower (50px ~ 12.3% matches real photo ratio) */
-.card-stub-right {
-  width: 46px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  padding-top: 7px;
-}
-
-/* INDIAN RAILWAYS — bottom-to-top orientation (-90deg = I at bottom, S at top) */
 .stub-left-text {
   position: absolute;
-  left: 50%;
   top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%) rotate(-90deg);
+  transform-origin: center center;
   white-space: nowrap;
-  font-family: 'Poppins', sans-serif;
-  font-size: 11.5px;
-  font-weight: 800;
+  font-size: 11px;
+  font-weight: 700;
   letter-spacing: 0.28em;
   color: #ffffff;
+  line-height: 1;
   text-transform: uppercase;
-  user-select: none;
 }
 
-/* Devanagari — no letter-spacing to preserve shirorekha ligatures */
+/* Right Stub: भारतीय रेल */
+.card-stub-right {
+  width: 48px;
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .stub-right-text {
   position: absolute;
-  left: 50%;
   top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%) rotate(-90deg);
+  transform-origin: center center;
   white-space: nowrap;
-  font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
-  font-size: 14px;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0;
   word-spacing: 6px;
   color: #ffffff;
-  user-select: none;
+  line-height: 1;
 }
 
-/* Dashed perforation: real photo shows 9px dash, 3px gap */
+/* Vertical Perforation Dashed Dividers */
 .stub-divider {
   width: 2px;
   flex-shrink: 0;
-  align-self: stretch;
-  margin: 7px 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  opacity: 0.9;
 }
 
+.stub-divider svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Center Dynamic Countdown Area */
 .dynamic-center {
-  flex-grow: 1;
-  text-align: center;
-  padding: 12px 4px 10px 4px;
+  flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
+  text-align: center;
+  padding: 11px 4px 10px 4px;
+  min-width: 0;
 }
 
 .dynamic-title {
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 11.5px;
+  font-weight: 400;
   color: #ffffff;
+  letter-spacing: -0.01em;
   margin: 0;
-  letter-spacing: 0;
-  line-height: 1.3;
 }
 
-/* Timer: 56px font matches ~66px physical height in real photo */
+/* Countdown Row (Both min & sec bold 700) */
 .countdown-row {
-  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 50px;
-  font-weight: 600;
-  color: #e8521e;
+  gap: 0;
+  font-size: 48px;
   line-height: 1;
+  font-weight: 700;
+  color: #e8521e;
+  height: 52px;
+  overflow: hidden;
+  margin: 2px 0 4px 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+#timer-min {
+  font-variant-numeric: tabular-nums;
+  display: inline-block;
+  font-weight: 700;
   letter-spacing: -0.02em;
 }
 
 .colon-separator {
+  display: inline-block;
   margin: 0 1px;
-  font-weight: 500;
-  color: #e8521e;
+  font-weight: 700;
+  position: relative;
+  top: -2px;
 }
 
 .ticker-viewport {
-  display: inline-block;
-  height: 50px;
-  line-height: 50px;
+  height: 52px;
   overflow: hidden;
+  position: relative;
+  display: inline-block;
   vertical-align: middle;
 }
 
 .ticker-track {
   display: flex;
   flex-direction: column;
-  transform: translateY(0);
+  will-change: transform;
 }
 
 .ticker-cell {
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  font-weight: 600;
-  color: #e8521e;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Date Section */
+.date-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .booking-date-label {
-  font-size: 12px;
+  font-size: 11px;
   color: #d1d5db;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0;
-  letter-spacing: 0;
 }
 
-/* Date: matches ~19px physical size in real photo */
 .booking-date-value {
-  font-size: 22px;
+  font-size: 18.5px;
   font-weight: 700;
   color: #f59e0b;
   margin: 1px 0 0 0;
@@ -312,28 +365,35 @@ body {
   line-height: 1.1;
 }
 
+/* Reference & Non-transferable (Authentic Amber) */
+.reference-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .reference-text {
-  font-size: 11px;
-  color: #9ca3af;
-  font-weight: 600;
-  margin: 2px 0 0 0;
+  font-size: 11.5px;
+  color: #f59e0b;
+  font-weight: 700;
+  margin: 1px 0 0 0;
 }
 
 .nontransferable-text {
   font-size: 11.5px;
-  color: #e5e7eb;
-  font-weight: 600;
-  margin: 1px 0 0 0;
+  color: #f59e0b;
+  font-weight: 700;
+  margin: 0;
 }
 
-/* ==========================================
-   4. Ticket Details Card
-   ========================================== */
+/* ==========================================================================
+   4. Ticket Details Card (Pure White with Lime Green Bottom)
+   ========================================================================== */
 .ticket-card {
   background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  margin-top: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -341,7 +401,7 @@ body {
 }
 
 .ticket-card-body {
-  padding: 14px 16px 8px 16px;
+  padding: 14px 14px 10px 14px;
 }
 
 .ticket-header-row {
@@ -352,24 +412,25 @@ body {
 }
 
 .season-label {
-  font-size: 11.5px;
+  font-size: 11px;
   color: #6b7280;
+  font-weight: 500;
   margin: 0;
 }
 
 .season-id {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
-  color: #000000;
-  margin: 3px 0 0 0;
+  color: #111827;
+  margin: 2px 0 0 0;
   letter-spacing: 0.02em;
 }
 
 .status-badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 12px;
+  gap: 5px;
+  padding: 3px 10px;
   border-radius: 9999px;
   font-size: 11.5px;
   font-weight: 700;
@@ -378,18 +439,18 @@ body {
 }
 
 .status-dot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: #4caf50;
 }
 
+/* Key-Value Details Grid */
 .ticket-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px 16px;
-  border-top: 1px solid #f3f4f6;
-  padding-top: 8px;
+  gap: 10px 16px;
+  padding-top: 6px;
 }
 
 .grid-cell-left {
@@ -412,416 +473,140 @@ body {
   display: block;
   font-size: 13.5px;
   font-weight: 700;
-  color: #000000;
+  color: #111827;
   line-height: 1.25;
+  margin-top: 1px;
 }
 
+/* Route Strip */
 .via-strip {
   display: flex;
   align-items: center;
   gap: 8px;
   background-color: #f9fafb;
   border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 6px 12px;
+  border-radius: 6px;
+  padding: 6px 10px;
   font-size: 11.5px;
   color: #4b5563;
-  margin-top: 8px;
+  margin: 10px 0;
 }
 
+/* Passenger Grid */
 .passenger-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6px 16px;
-  margin-top: 8px;
+  gap: 8px 16px;
 }
 
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Bottom Lime Green Accent Band */
 .card-bottom-accent {
-  height: 8px;
+  height: 6px;
   width: 100%;
-  background-color: #a3e635;
+  background-color: #84c43e;
+  border-radius: 0 0 12px 12px;
 }
 
-/* ==========================================
-   5. Advisory & Action
-   ========================================== */
+/* ==========================================================================
+   5. Warning Advisory Box
+   ========================================================================== */
 .warning-box {
   background-color: #fdeeed;
-  border-radius: 12px;
-  padding: 10px 14px;
-  text-align: center;
-  min-height: 50px;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-top: 14px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
 }
 
-.warning-text {
-  font-size: 11.5px;
-  line-height: 1.4;
-  color: #c53030;
-  margin: 0;
-  font-weight: 500;
-}
-
-.action-btn {
-  width: 100%;
-  background-color: #0062f5;
-  color: #ffffff;
-  font-weight: 600;
-  height: 46px;
-  border-radius: 9999px;
-  border: none;
-  font-size: 15px;
-  letter-spacing: 0.01em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 98, 245, 0.25);
-  cursor: pointer;
-  transition: background-color 0.15s ease, transform 0.1s ease;
-}
-
-.action-btn:active {
-  background-color: #0052cc;
-  transform: scale(0.99);
-}
-
-.qr-container {
-  background: #ffffff;
-  padding: 24px 16px;
-  border-radius: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.info-footer {
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 16px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-}
-
-.footer-heading {
-  font-size: 13.5px;
-  font-weight: 700;
-  color: #111827;
-  margin: 0;
-}
-
-.footer-paragraph {
-  font-size: 11.5px;
-  line-height: 1.5;
-  color: #6b7280;
-  margin: 0;
-}
-
-/* Seamless Vertical Rolling Ticker */
-.stub-left-text {
-  font-size: 11px;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-}
-
-.stub-right-text {
-  font-size: 11.5px;
-  letter-spacing: 0.2em;
-}
-
-.stub-divider {
-  width: 2px;
+.warning-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
   flex-shrink: 0;
-  align-self: stretch;
-  margin: 8px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.dynamic-center {
-  flex-grow: 1;
-  text-align: center;
-  padding: 14px 6px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.dynamic-title {
-  font-size: 14.5px;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0;
-  letter-spacing: -0.01em;
-}
-
-/* Odometer Slot Reel */
-.countdown-row {
-  margin: 2px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 50px;
-  font-weight: 900;
-  color: #ff2a2a;
-  line-height: 1;
-  letter-spacing: -0.02em;
-}
-
-.colon-separator {
-  margin: 0 2px;
-}
-
-.ticker-viewport {
-  display: inline-block;
-  height: 52px;
-  line-height: 52px;
-  overflow: hidden;
-  vertical-align: middle;
-}
-
-.ticker-track {
-  display: flex;
-  flex-direction: column;
-  transform: translateY(0);
-}
-
-.ticker-cell {
-  height: 52px;
-  line-height: 52px;
-  text-align: center;
-}
-
-.booking-date-label {
-  font-size: 13.5px;
-  color: #e5e7eb;
-  font-weight: 600;
-  margin: 0;
-}
-
-.booking-date-value {
-  font-size: 24px;
-  font-weight: 800;
-  color: #f59e0b;
-  margin: 2px 0 0 0;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-}
-
-.reference-text {
-  font-size: 12.5px;
-  color: #e5e7eb;
-  font-weight: 600;
-  margin: 4px 0 0 0;
-}
-
-.nontransferable-text {
-  font-size: 12px;
-  color: #d1d5db;
-  font-weight: 500;
-  margin: 2px 0 0 0;
-}
-
-/* ==========================================
-   4. Ticket Details Card
-   ========================================== */
-.ticket-card {
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.ticket-card-body {
-  padding: 14px 16px 8px 16px;
-}
-
-.ticket-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.season-label {
-  font-size: 11.5px;
-  color: #6b7280;
-  margin: 0;
-}
-
-.season-id {
-  font-size: 16px;
-  font-weight: 700;
-  color: #000000;
-  margin: 3px 0 0 0;
-  letter-spacing: 0.02em;
-}
-
-.status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 12px;
-  border-radius: 9999px;
-  font-size: 11.5px;
-  font-weight: 700;
-  background-color: #e8f5e9;
-  color: #2e7d32;
-}
-
-.status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: #4caf50;
-}
-
-.ticket-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px 16px;
-  border-top: 1px solid #f3f4f6;
-  padding-top: 8px;
-}
-
-.grid-cell-left {
-  text-align: left;
-}
-
-.grid-cell-right {
-  text-align: right;
-}
-
-.cell-label {
-  display: block;
-  font-size: 11px;
-  color: #6b7280;
-  font-weight: 500;
-  line-height: 1.2;
-}
-
-.cell-value {
-  display: block;
-  font-size: 13.5px;
-  font-weight: 700;
-  color: #000000;
-  line-height: 1.25;
-}
-
-.via-strip {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 6px 12px;
-  font-size: 11.5px;
-  color: #4b5563;
-  margin-top: 8px;
-}
-
-.passenger-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px 16px;
-  margin-top: 8px;
-}
-
-.card-bottom-accent {
-  height: 8px;
-  width: 100%;
-  background-color: #a3e635;
-}
-
-/* ==========================================
-   5. Advisory & Action
-   ========================================== */
-.warning-box {
-  background-color: #fdeeed;
-  border-radius: 12px;
-  padding: 10px 14px;
-  text-align: center;
-  min-height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-top: 1px;
 }
 
 .warning-text {
   font-size: 11.5px;
+  color: #991b1b;
   line-height: 1.4;
-  color: #c53030;
   margin: 0;
-  font-weight: 500;
 }
 
+/* ==========================================================================
+   6. Action Button
+   ========================================================================== */
 .action-btn {
   width: 100%;
-  background-color: #0062f5;
+  height: 44px;
+  background-color: #005bf5;
   color: #ffffff;
-  font-weight: 600;
-  height: 46px;
-  border-radius: 9999px;
   border: none;
-  font-size: 15px;
-  letter-spacing: 0.01em;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 91, 245, 0.2);
+  margin-top: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 98, 245, 0.25);
-  cursor: pointer;
-  transition: background-color 0.15s ease, transform 0.1s ease;
+  transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
 .action-btn:active {
-  background-color: #0052cc;
-  transform: scale(0.99);
+  transform: scale(0.98);
+  opacity: 0.9;
 }
 
+/* ==========================================================================
+   7. QR Code Container
+   ========================================================================== */
 .qr-container {
   background: #ffffff;
-  padding: 24px 16px;
-  border-radius: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
+#qrcode img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   8. Statutory Footer
+   ========================================================================== */
 .info-footer {
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 16px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  margin-top: 16px;
+  padding: 0 4px;
+  font-size: 11.5px;
+  color: #6b7280;
+  line-height: 1.45;
 }
 
 .footer-heading {
-  font-size: 13.5px;
+  font-size: 12.5px;
   font-weight: 700;
-  color: #111827;
-  margin: 0;
+  color: #374151;
+  margin-bottom: 6px;
 }
 
 .footer-paragraph {
-  font-size: 11.5px;
-  line-height: 1.5;
-  color: #6b7280;
-  margin: 0;
+  margin-bottom: 8px;
+}
+
+.footer-paragraph:last-child {
+  margin-bottom: 0;
 }
