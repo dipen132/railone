@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Trigger smooth vertical roll (280ms duration)
     isRolling = true;
     track.style.transition = 'transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1)';
-    track.style.transform = 'translateY(-56px)';
+    track.style.transform = 'translateY(-50px)';
 
     // Reset track position silently after transition ends
     setTimeout(() => {
