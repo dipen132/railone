@@ -18,7 +18,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
   <!-- Modular Stylesheet with Cache Busting -->
-  <link rel="stylesheet" href="css/style.css?v=2.3" />
+  <link rel="stylesheet" href="css/style.css?v=2.4" />
 </head>
 <body class="bg-[#f0f2f5] min-h-screen flex justify-center items-start text-gray-800">
 
@@ -31,17 +31,17 @@
     <header class="bg-[#005bf5] text-white px-4 h-[67px] flex items-center justify-between shadow-xs sticky top-0 z-30">
       <div class="flex items-center gap-3">
         <!-- Circular outlined back button -->
-        <button class="w-[32px] h-[32px] rounded-full border border-white/75 flex items-center justify-center hover:bg-white/10 active:scale-95 transition" aria-label="Back">
+        <button class="w-[34px] h-[34px] rounded-full border border-white/80 flex items-center justify-center hover:bg-white/10 active:scale-95 transition" aria-label="Back">
           <i data-lucide="arrow-left" class="w-4 h-4 text-white stroke-[2.5]"></i>
         </button>
         <div>
-          <h1 class="text-[17px] font-bold leading-tight tracking-tight">Booking Details</h1>
-          <p class="text-[12px] text-blue-100 font-normal">Mobile: 8980189932</p>
+          <h1 class="text-[18px] font-bold leading-tight tracking-tight">Booking Details</h1>
+          <p class="text-[12.5px] text-blue-100 font-normal">Mobile: 8980189932</p>
         </div>
       </div>
       <!-- Right document icon with 3 horizontal stripes -->
       <button class="p-1 hover:bg-white/10 rounded-lg transition" aria-label="Menu">
-        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+        <svg class="w-[26px] h-[26px] text-white" viewBox="0 0 24 24" fill="currentColor">
           <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h12a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm3 4a1 1 0 011-1h8a1 1 0 110 2H8a1 1 0 01-1-1zm0 4a1 1 0 011-1h8a1 1 0 110 2H8a1 1 0 01-1-1zm0 4a1 1 0 011-1h8a1 1 0 110 2H8a1 1 0 01-1-1z" clip-rule="evenodd" />
         </svg>
       </button>
@@ -50,18 +50,18 @@
     <div class="px-[13px] pt-3 space-y-2.5">
       
       <!-- Greeting Banner (Exact 45px height, rounded-xl) -->
-      <div class="bg-[#edf7ed] text-[#1e6b37] text-[12px] font-medium h-[45px] px-3 rounded-xl flex items-center justify-center text-center shadow-xs">
+      <div class="bg-[#edf7ed] text-[#1b5e20] text-[12.5px] font-semibold h-[45px] px-3 rounded-xl flex items-center justify-center text-center shadow-xs">
         Thank You Kapadia Om Vipulkumar, Happy Journey !
       </div>
 
       <!-- ========================================== -->
-      <!-- SECTION 2: DYNAMIC PREVIEW (Height 167px)  -->
+      <!-- SECTION 2: DYNAMIC PREVIEW (Height 175px)  -->
       <!-- ========================================== -->
-      <section class="bg-argyle rounded-xl border-t-[4.5px] border-[#76c043] text-white relative overflow-hidden shadow-md flex items-stretch min-h-[167px]">
+      <section class="bg-argyle rounded-xl border-t-[5px] border-[#76c043] text-white relative overflow-hidden shadow-md flex items-stretch min-h-[175px]">
         
         <!-- Left Stub: INDIAN RAILWAYS (Reads TOP-TO-BOTTOM) -->
-        <div class="w-8 shrink-0 flex items-center justify-center py-2">
-          <span class="vertical-top-to-bottom text-[9px] tracking-[0.2em] text-gray-300 font-bold uppercase select-none">
+        <div class="w-[34px] shrink-0 flex items-center justify-center py-2">
+          <span class="vertical-top-to-bottom text-[10px] tracking-[0.24em] text-gray-200 font-bold uppercase select-none">
             INDIAN RAILWAYS
           </span>
         </div>
@@ -74,22 +74,23 @@
         </div>
 
         <!-- Center Ticket Info -->
-        <div class="grow text-center py-3 px-2 flex flex-col justify-between">
-          <p class="text-[12px] text-gray-200 font-medium">Dynamic preview will close in</p>
+        <div class="grow text-center py-3 px-1 flex flex-col justify-between">
+          <p class="text-[13px] text-white font-medium tracking-tight">Dynamic preview will close in</p>
           
-          <!-- Clean 1-Second Countdown in Bold Sans -->
+          <!-- Large, Prominent 1-Second Countdown in Bold Rounded Sans (44px) -->
           <div class="my-0.5 flex items-center justify-center">
-            <span id="countdown" class="text-[36px] font-black text-[#ff2a2a] tracking-tight leading-none font-sans drop-shadow-sm">05:00</span>
+            <span id="countdown" class="text-[44px] font-black text-[#ff2a2a] tracking-tight leading-none font-sans drop-shadow-sm">05:00</span>
           </div>
 
           <div>
-            <p class="text-[11px] text-gray-300 font-normal">Ticket Booking Date & Time</p>
-            <p class="text-[19px] font-extrabold text-[#f59e0b] mt-0.5 tracking-tight leading-snug">29 Oct 2026, 07:25</p>
+            <p class="text-[12px] text-gray-200 font-normal">Ticket Booking Date & Time</p>
+            <!-- Yellow Date Text: Exactly 80% Center Width at 23.5px font size -->
+            <p class="text-[23.5px] font-extrabold text-[#f59e0b] mt-0.5 tracking-tight leading-none">29 Oct 2026, 07:25</p>
           </div>
           
-          <div class="text-[11px] text-gray-300 leading-tight">
-            <span class="block font-medium">R19112</span>
-            <span class="block text-[10.5px] text-gray-400 mt-0.5">Ticket is Non-Transferable</span>
+          <div class="text-[12px] text-gray-200 leading-tight pt-0.5">
+            <span class="block font-semibold">R19112</span>
+            <span class="block text-[11.5px] text-gray-300 mt-0.5">Ticket is Non-Transferable</span>
           </div>
         </div>
 
@@ -101,8 +102,8 @@
         </div>
 
         <!-- Right Stub: भारतीय रेल (Reads TOP-TO-BOTTOM) -->
-        <div class="w-8 shrink-0 flex items-center justify-center py-2">
-          <span class="vertical-top-to-bottom text-[9.5px] tracking-[0.16em] text-gray-300 font-bold select-none">
+        <div class="w-[34px] shrink-0 flex items-center justify-center py-2">
+          <span class="vertical-top-to-bottom text-[10.5px] tracking-[0.18em] text-gray-200 font-bold select-none">
             भारतीय रेल
           </span>
         </div>
@@ -254,6 +255,6 @@
   </main>
 
   <!-- Modular Scripts with Cache Busting -->
-  <script src="js/app.js?v=2.3"></script>
+  <script src="js/app.js?v=2.4"></script>
 </body>
 </html>
