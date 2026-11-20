@@ -2,85 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Lock zoom & scale for true mobile app feel -->
+  <!-- Strict mobile viewport lockdown -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="theme-color" content="#005bf5" />
 
   <title>Booking Details - Indian Railways</title>
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons -->
+
+  <!-- Production Modular Stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=3.0" />
+
+  <!-- Core Libraries -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- QRCode.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-  <!-- Modular Stylesheet with Cache Busting -->
-  <link rel="stylesheet" href="css/style.css?v=2.6" />
 </head>
-<body class="bg-[#f0f2f5] min-h-screen flex justify-center items-start text-gray-800">
+<body>
 
-  <!-- Mobile Viewport Frame (Exact 434px max-width matching original device) -->
-  <main class="w-full max-w-[434px] min-h-screen bg-[#f0f2f5] flex flex-col pb-12">
+  <!-- Main Mobile App Shell -->
+  <main class="app-container">
 
-    <!-- ========================================== -->
-    <!-- SECTION 1: APP BAR (Height 67px, #005bf5)  -->
-    <!-- ========================================== -->
-    <header class="bg-[#005bf5] text-white px-4 h-[67px] flex items-center justify-between shadow-xs sticky top-0 z-30">
-      <div class="flex items-center gap-3">
-        <!-- Circular outlined back button -->
-        <button class="w-[34px] h-[34px] rounded-full border border-white/80 flex items-center justify-center hover:bg-white/10 active:scale-95 transition" aria-label="Back">
-          <i data-lucide="arrow-left" class="w-4 h-4 text-white stroke-[2.5]"></i>
+    <!-- 1. Native-Grade App Bar -->
+    <header class="app-header">
+      <div style="display: flex; align-items: center;">
+        <button class="back-btn" aria-label="Go back">
+          <i data-lucide="arrow-left" style="width: 16px; height: 16px; stroke-width: 2.5;"></i>
         </button>
-        <div>
-          <h1 class="text-[18px] font-bold leading-tight tracking-tight">Booking Details</h1>
-          <p class="text-[12.5px] text-blue-100 font-normal">Mobile: 8980189932</p>
+        <div class="header-title-group">
+          <h1 class="header-title">Booking Details</h1>
+          <p class="header-subtitle">Mobile: 8980189932</p>
         </div>
       </div>
-      <!-- Right document icon with 3 horizontal stripes -->
-      <button class="p-1 hover:bg-white/10 rounded-lg transition" aria-label="Menu">
-        <svg class="w-[26px] h-[26px] text-white" viewBox="0 0 24 24" fill="currentColor">
+      <button class="header-action-btn" aria-label="Menu options">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
           <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h12a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm3 4a1 1 0 011-1h8a1 1 0 110 2H8a1 1 0 01-1-1zm0 4a1 1 0 011-1h8a1 1 0 110 2H8a1 1 0 01-1-1zm0 4a1 1 0 011-1h8a1 1 0 110 2H8a1 1 0 01-1-1z" clip-rule="evenodd" />
         </svg>
       </button>
     </header>
 
-    <div class="px-[13px] pt-3 space-y-2.5">
-      
-      <!-- Greeting Banner (Exact 45px height, rounded-xl) -->
-      <div class="bg-[#edf7ed] text-[#1b5e20] text-[12.5px] font-semibold h-[45px] px-3 rounded-xl flex items-center justify-center text-center shadow-xs">
+    <div class="app-content">
+
+      <!-- 2. Greeting Banner -->
+      <div class="greeting-banner">
         Thank You Kapadia Om Vipulkumar, Happy Journey !
       </div>
 
-      <!-- ========================================== -->
-      <!-- SECTION 2: DYNAMIC PREVIEW (Exact Match)   -->
-      <!-- ========================================== -->
-      <section class="bg-argyle rounded-xl border-t-[5px] border-[#76c043] text-white relative overflow-hidden shadow-md flex items-stretch min-h-[185px] font-poppins">
-        
-        <!-- Left Stub: INDIAN RAILWAYS (Reads TOP-TO-BOTTOM) -->
-        <div class="w-[48px] shrink-0 flex items-center justify-center py-3">
-          <span class="vertical-top-to-bottom text-[11px] tracking-[0.26em] text-gray-200 font-bold uppercase select-none">
-            INDIAN RAILWAYS
-          </span>
+      <!-- 3. Dynamic Preview Card -->
+      <section class="dynamic-card">
+        <!-- Left Stub: INDIAN RAILWAYS -->
+        <div class="card-stub-left">
+          <span class="vertical-text stub-left-text">INDIAN RAILWAYS</span>
         </div>
 
-        <!-- Left Perforation Dashed Line (Inline SVG with 5px dashes) -->
-        <div class="w-[2px] shrink-0 self-stretch my-2 flex items-center justify-center">
-          <svg class="w-[2px] h-full" preserveAspectRatio="none" viewBox="0 0 2 100">
+        <!-- Left Perforation Dashed Line -->
+        <div class="stub-divider">
+          <svg width="2" height="100%" preserveAspectRatio="none" viewBox="0 0 2 100">
             <line x1="1" y1="0" x2="1" y2="100" stroke="#ffffff" stroke-opacity="0.85" stroke-width="2" stroke-dasharray="5,4" vector-effect="non-scaling-stroke" />
           </svg>
         </div>
 
-        <!-- Center Ticket Info (Proportional 80%+ width coverage) -->
-        <div class="grow text-center py-3.5 px-1.5 flex flex-col justify-between">
-          <p class="text-[15px] font-bold text-white tracking-tight leading-tight">Dynamic preview will close in</p>
+        <!-- Center Dynamic Countdown Area -->
+        <div class="dynamic-center">
+          <p class="dynamic-title">Dynamic preview will close in</p>
           
-          <!-- Smooth Vertical Rolling Odometer Ticker (50px Bold Poppins) -->
-          <div class="my-0.5 flex items-center justify-center text-[50px] font-black text-[#ff2a2a] tracking-tight leading-none drop-shadow-sm select-none">
+          <!-- Odometer Slot-Machine Timer -->
+          <div class="countdown-row">
             <span id="timer-min">05</span>
-            <span class="mx-0.5">:</span>
+            <span class="colon-separator">:</span>
             <div class="ticker-viewport">
               <div id="ticker-track" class="ticker-track">
                 <span id="digit-curr" class="ticker-cell">00</span>
@@ -90,170 +78,151 @@
           </div>
 
           <div>
-            <p class="text-[13.5px] text-gray-200 font-semibold tracking-tight">Ticket Booking Date & Time</p>
-            <!-- Yellow Date Text: Exact 82% Center Width (24px bold) -->
-            <p class="text-[24px] font-extrabold text-[#f59e0b] mt-0.5 tracking-tight leading-tight">29 Oct 2026, 07:25</p>
+            <p class="booking-date-label">Ticket Booking Date & Time</p>
+            <p class="booking-date-value">29 Oct 2026, 07:25</p>
           </div>
           
-          <div class="text-[12.5px] text-gray-200 leading-tight pt-1">
-            <span class="block font-semibold">R19112</span>
-            <span class="block text-[12px] text-gray-300 mt-0.5 font-medium">Ticket is Non-Transferable</span>
+          <div>
+            <p class="reference-text">R19112</p>
+            <p class="nontransferable-text">Ticket is Non-Transferable</p>
           </div>
         </div>
 
-        <!-- Right Perforation Dashed Line (Inline SVG with 5px dashes) -->
-        <div class="w-[2px] shrink-0 self-stretch my-2 flex items-center justify-center">
-          <svg class="w-[2px] h-full" preserveAspectRatio="none" viewBox="0 0 2 100">
+        <!-- Right Perforation Dashed Line -->
+        <div class="stub-divider">
+          <svg width="2" height="100%" preserveAspectRatio="none" viewBox="0 0 2 100">
             <line x1="1" y1="0" x2="1" y2="100" stroke="#ffffff" stroke-opacity="0.85" stroke-width="2" stroke-dasharray="5,4" vector-effect="non-scaling-stroke" />
           </svg>
         </div>
 
-        <!-- Right Stub: भारतीय रेल (Reads TOP-TO-BOTTOM) -->
-        <div class="w-[44px] shrink-0 flex items-center justify-center py-3">
-          <span class="vertical-top-to-bottom text-[11.5px] tracking-[0.2em] text-gray-200 font-bold select-none">
-            भारतीय रेल
-          </span>
+        <!-- Right Stub: भारतीय रेल -->
+        <div class="card-stub-right">
+          <span class="vertical-text stub-right-text">भारतीय रेल</span>
         </div>
       </section>
 
-      <!-- ========================================== -->
-      <!-- SECTION 3: TICKET DETAILS (Exact 360px)   -->
-      <!-- ========================================== -->
-      <section class="rounded-2xl bg-white shadow-sm overflow-hidden border border-gray-100 flex flex-col justify-between">
-        
-        <div class="px-4 pt-3.5 pb-2">
-          <!-- Season Ticket Number & Active Status -->
-          <div class="flex justify-between items-center mb-2.5">
+      <!-- 4. Ticket Details Card -->
+      <section class="ticket-card">
+        <div class="ticket-card-body">
+          <!-- Top Row -->
+          <div class="ticket-header-row">
             <div>
-              <p class="text-[11.5px] text-gray-500 font-normal leading-none">Season Ticket</p>
-              <p class="text-[16px] font-bold text-black tracking-wide mt-1 leading-none">X53JEHL010</p>
+              <p class="season-label">Season Ticket</p>
+              <p class="season-id">X53JEHL010</p>
             </div>
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11.5px] font-bold bg-[#e8f5e9] text-[#2e7d32]">
-              <span class="w-2 h-2 rounded-full bg-[#4caf50]"></span>
+            <div class="status-badge">
+              <span class="status-dot"></span>
               ACTIVE
-            </span>
-          </div>
-
-          <!-- 2-Column Info Grid (Compact pixel-matched rows) -->
-          <div class="grid grid-cols-2 gap-y-2 gap-x-4 border-t border-gray-100 pt-2 text-[13px]">
-            <!-- Row 1: Source & Destination -->
-            <div>
-              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Source</span>
-              <span class="font-bold text-black text-[13.5px] leading-tight block">ANKLESHWAR JN.</span>
-            </div>
-            <div class="text-right">
-              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Destination</span>
-              <span class="font-bold text-black text-[13.5px] leading-tight block">SURAT</span>
-            </div>
-
-            <!-- Row 2: Distance & Booked on -->
-            <div>
-              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Distance</span>
-              <span class="font-bold text-black text-[13.5px] leading-tight block">50 km</span>
-            </div>
-            <div class="text-right">
-              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Booked on</span>
-              <span class="font-bold text-black text-[13.5px] leading-tight block">29/10/2026 07:25</span>
-            </div>
-
-            <!-- Row 3: Ticket Type & Train Types -->
-            <div>
-              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Ticket Type</span>
-              <span class="font-bold text-black text-[13.5px] leading-tight block">MONTHLY</span>
-            </div>
-            <div class="text-right">
-              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Train Types</span>
-              <span class="font-bold text-black text-[13.5px] leading-tight block">MAIL/EXPRESS</span>
-            </div>
-
-            <!-- Row 4: Class & Fare -->
-            <div>
-              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Class</span>
-              <span class="font-bold text-black text-[13.5px] leading-tight block">SECOND</span>
-            </div>
-            <div class="text-right">
-              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Fare</span>
-              <span class="font-bold text-black text-[13.5px] leading-tight block">270.00</span>
-            </div>
-
-            <!-- Row 5: Valid From & Valid Upto -->
-            <div>
-              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Valid From</span>
-              <span class="font-bold text-black text-[13.5px] leading-tight block">30/10/2026</span>
-            </div>
-            <div class="text-right">
-              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Valid Upto</span>
-              <span class="font-bold text-black text-[13.5px] leading-tight block">29/11/2026</span>
             </div>
           </div>
 
-          <!-- Via Route Strip -->
-          <div class="flex items-center gap-2 bg-[#f9fafb] border border-gray-200/70 rounded-xl px-3 py-1.5 text-[11.5px] text-gray-600 mt-2">
-            <i data-lucide="share-2" class="w-3.5 h-3.5 text-gray-500 stroke-[2.2]"></i>
-            <span class="font-normal text-gray-600">Via: ------</span>
+          <!-- 2-Column Details Grid -->
+          <div class="ticket-grid">
+            <div class="grid-cell-left">
+              <span class="cell-label">Source</span>
+              <span class="cell-value">ANKLESHWAR JN.</span>
+            </div>
+            <div class="grid-cell-right">
+              <span class="cell-label">Destination</span>
+              <span class="cell-value">SURAT</span>
+            </div>
+
+            <div class="grid-cell-left">
+              <span class="cell-label">Distance</span>
+              <span class="cell-value">50 km</span>
+            </div>
+            <div class="grid-cell-right">
+              <span class="cell-label">Booked on</span>
+              <span class="cell-value">29/10/2026 07:25</span>
+            </div>
+
+            <div class="grid-cell-left">
+              <span class="cell-label">Ticket Type</span>
+              <span class="cell-value">MONTHLY</span>
+            </div>
+            <div class="grid-cell-right">
+              <span class="cell-label">Train Types</span>
+              <span class="cell-value">MAIL/EXPRESS</span>
+            </div>
+
+            <div class="grid-cell-left">
+              <span class="cell-label">Class</span>
+              <span class="cell-value">SECOND</span>
+            </div>
+            <div class="grid-cell-right">
+              <span class="cell-label">Fare</span>
+              <span class="cell-value">270.00</span>
+            </div>
+
+            <div class="grid-cell-left">
+              <span class="cell-label">Valid From</span>
+              <span class="cell-value">30/10/2026</span>
+            </div>
+            <div class="grid-cell-right">
+              <span class="cell-label">Valid Upto</span>
+              <span class="cell-value">29/11/2026</span>
+            </div>
+          </div>
+
+          <!-- Route Strip -->
+          <div class="via-strip">
+            <i data-lucide="share-2" style="width: 14px; height: 14px; color: #6b7280; stroke-width: 2.2;"></i>
+            <span>Via: ------</span>
           </div>
 
           <!-- Passenger Details Section -->
-          <div class="grid grid-cols-2 gap-y-1.5 gap-x-4 mt-2 text-[13px]">
-            <div>
-              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Name</span>
-              <span class="font-bold text-black text-[13.5px] leading-tight block">Kapadia Om Vipulkuma</span>
+          <div class="passenger-grid">
+            <div class="grid-cell-left">
+              <span class="cell-label">Name</span>
+              <span class="cell-value">Kapadia Om Vipulkuma</span>
             </div>
-            <div class="text-right">
-              <span class="text-gray-500 text-[11px] font-normal leading-tight block">Age</span>
-              <span class="font-bold text-black text-[13.5px] leading-tight block">24 years</span>
+            <div class="grid-cell-right">
+              <span class="cell-label">Age</span>
+              <span class="cell-value">24 years</span>
             </div>
 
-            <div>
-              <span class="text-gray-500 text-[11px] font-normal leading-tight block">ID Type*</span>
-              <span class="font-bold text-black text-[13.5px] leading-tight block">PAN Card</span>
+            <div class="grid-cell-left">
+              <span class="cell-label">ID Type*</span>
+              <span class="cell-value">PAN Card</span>
             </div>
-            <div class="text-right">
-              <span class="text-gray-500 text-[11px] font-normal leading-tight block">ID Number</span>
-              <span class="font-bold text-black text-[13.5px] leading-tight block">MNBPK7746M</span>
+            <div class="grid-cell-right">
+              <span class="cell-label">ID Number</span>
+              <span class="cell-value font-mono">MNBPK7746M</span>
             </div>
           </div>
         </div>
 
-        <!-- Bottom Accent Strip (8px height) -->
-        <div class="h-[8px] bg-[#a3e635] w-full"></div>
+        <!-- Bottom Accent Band -->
+        <div class="card-bottom-accent"></div>
       </section>
 
-      <!-- ========================================== -->
-      <!-- SECTION 4: WARNING ADVISORY (Height 61px)  -->
-      <!-- ========================================== -->
-      <div class="bg-[#fdeeed] rounded-xl py-2 px-3 text-center min-h-[58px] flex items-center justify-center">
-        <p class="text-[11.5px] leading-[1.38] text-[#c53030] font-normal">
+      <!-- 5. Warning Advisory -->
+      <div class="warning-box">
+        <p class="warning-text">
           Note: This ticket is non refundable. Ticket is stored locally on the device. Please do not change your handset or perform factory reset.
         </p>
       </div>
 
-      <!-- ========================================== -->
-      <!-- SECTION 5: ACTION BUTTON (Height 45px)     -->
-      <!-- ========================================== -->
-      <button class="w-full bg-[#0062f5] hover:bg-[#0052cc] active:scale-[0.99] text-white font-medium h-[45px] rounded-full shadow transition text-[15px] tracking-wide flex items-center justify-center">
+      <!-- 6. Action Button -->
+      <button class="action-btn">
         Upgrade to Superfast
       </button>
 
-      <!-- Centered QR Code Card -->
-      <div class="bg-white py-6 px-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center">
-        <div id="qrcode" class="flex justify-center"></div>
+      <!-- 7. QR Code Container -->
+      <div class="qr-container">
+        <div id="qrcode"></div>
       </div>
 
-      <!-- ========================================== -->
-      <!-- SECTION 6: "DO YOU KNOW?" FOOTER           -->
-      <!-- ========================================== -->
-      <footer class="bg-white border border-gray-100 rounded-2xl p-4 space-y-2.5 text-gray-600 shadow-sm">
-        <h2 class="font-bold text-gray-900 text-[13.5px]">
-          Do you know?
-        </h2>
-        <p class="text-[11.5px] leading-relaxed text-gray-500">
+      <!-- 8. "Do You Know?" Advisory Footer -->
+      <footer class="info-footer">
+        <h2 class="footer-heading">Do you know?</h2>
+        <p class="footer-paragraph">
           IR recovers only 57% of cost of travel on an average.
         </p>
-        <p class="text-[11.5px] leading-relaxed text-gray-500">
+        <p class="footer-paragraph">
           This ticket is booked on a personal user ID. It's sale/purchase is an offence u/s 143 of the Railways Act, 1989
         </p>
-        <p class="text-[11.5px] leading-relaxed text-gray-500">
+        <p class="footer-paragraph">
           For enquiry and integrated railway helpline, please dial 139.
         </p>
       </footer>
@@ -262,6 +231,6 @@
   </main>
 
   <!-- Modular Scripts with Cache Busting -->
-  <script src="js/app.js?v=2.6"></script>
+  <script src="js/app.js?v=3.0"></script>
 </body>
 </html>

@@ -1,33 +1,142 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
 
-/* Lock viewport & prevent mobile zoom/bounce */
+/* ==========================================================================
+   Base & Mobile Environment Optimization
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html, body {
   width: 100%;
   min-height: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
   background-color: #f0f2f5;
-  -webkit-text-size-adjust: 100%;
-  touch-action: pan-y;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-body, button, input, select, textarea {
+  color: #111827;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+  overscroll-behavior-y: none;
 }
 
-/* Poppins utility for authentic geometric ticket typography */
-.font-poppins {
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+/* ==========================================================================
+   Layout Shell
+   ========================================================================== */
+.app-container {
+  width: 100%;
+  max-width: 434px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
-/* Authentic Diamond Argyle Grid (Exact 26px x 38px Rhombuses matching photo) */
-.bg-argyle {
+/* ==========================================================================
+   1. App Header
+   ========================================================================== */
+.app-header {
+  background-color: #005bf5;
+  color: #ffffff;
+  padding: calc(env(safe-area-inset-top, 0px) + 12px) 16px 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.back-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  color: #ffffff;
+}
+
+.back-btn:active {
+  transform: scale(0.94);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.header-title-group {
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title {
+  margin: 0;
+  font-size: 17.5px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.header-subtitle {
+  margin: 1px 0 0 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+}
+
+.header-action-btn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/* ==========================================================================
+   2. Content Wrapper & Greeting
+   ========================================================================== */
+.app-content {
+  padding: 12px 13px 40px 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.greeting-banner {
+  background-color: #edf7ed;
+  color: #1b5e20;
+  font-size: 12.5px;
+  font-weight: 600;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+/* ==========================================================================
+   3. Dynamic Preview Card
+   ========================================================================== */
+.dynamic-card {
   background-color: #151618;
   background-image: 
     linear-gradient(135deg, #27292c 25%, transparent 25%),
@@ -37,15 +146,99 @@ body, button, input, select, textarea {
   background-position: -13px 0, -13px 0, 0 0, 0 0;
   background-size: 26px 38px;
   background-repeat: repeat;
+  border-radius: 14px;
+  border-top: 5px solid #76c043;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  min-height: 185px;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
 }
 
-/* Vertical text reading naturally TOP-TO-BOTTOM */
-.vertical-top-to-bottom {
+.card-stub-left {
+  width: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.card-stub-right {
+  width: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.vertical-text {
   writing-mode: vertical-rl;
   text-orientation: mixed;
+  color: #e5e7eb;
+  font-weight: 700;
+  user-select: none;
 }
 
-/* Seamless Vertical Rolling Ticker */
+.stub-left-text {
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.stub-right-text {
+  font-size: 11.5px;
+  letter-spacing: 0.2em;
+}
+
+.stub-divider {
+  width: 2px;
+  flex-shrink: 0;
+  align-self: stretch;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dynamic-center {
+  flex-grow: 1;
+  text-align: center;
+  padding: 14px 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dynamic-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Odometer Slot Reel */
+.countdown-row {
+  margin: 2px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  font-weight: 900;
+  color: #ff2a2a;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.colon-separator {
+  margin: 0 2px;
+}
+
 .ticker-viewport {
   display: inline-block;
   height: 52px;
@@ -64,4 +257,231 @@ body, button, input, select, textarea {
   height: 52px;
   line-height: 52px;
   text-align: center;
+}
+
+.booking-date-label {
+  font-size: 13.5px;
+  color: #e5e7eb;
+  font-weight: 600;
+  margin: 0;
+}
+
+.booking-date-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: #f59e0b;
+  margin: 2px 0 0 0;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.reference-text {
+  font-size: 12.5px;
+  color: #e5e7eb;
+  font-weight: 600;
+  margin: 4px 0 0 0;
+}
+
+.nontransferable-text {
+  font-size: 12px;
+  color: #d1d5db;
+  font-weight: 500;
+  margin: 2px 0 0 0;
+}
+
+/* ==========================================
+   4. Ticket Details Card
+   ========================================== */
+.ticket-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ticket-card-body {
+  padding: 14px 16px 8px 16px;
+}
+
+.ticket-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.season-label {
+  font-size: 11.5px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.season-id {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+  margin: 3px 0 0 0;
+  letter-spacing: 0.02em;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #4caf50;
+}
+
+.ticket-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 8px;
+}
+
+.grid-cell-left {
+  text-align: left;
+}
+
+.grid-cell-right {
+  text-align: right;
+}
+
+.cell-label {
+  display: block;
+  font-size: 11px;
+  color: #6b7280;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.cell-value {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.25;
+}
+
+.via-strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 6px 12px;
+  font-size: 11.5px;
+  color: #4b5563;
+  margin-top: 8px;
+}
+
+.passenger-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 16px;
+  margin-top: 8px;
+}
+
+.card-bottom-accent {
+  height: 8px;
+  width: 100%;
+  background-color: #a3e635;
+}
+
+/* ==========================================
+   5. Advisory & Action
+   ========================================== */
+.warning-box {
+  background-color: #fdeeed;
+  border-radius: 12px;
+  padding: 10px 14px;
+  text-align: center;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.warning-text {
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: #c53030;
+  margin: 0;
+  font-weight: 400;
+}
+
+.action-btn {
+  width: 100%;
+  background-color: #0062f5;
+  color: #ffffff;
+  font-weight: 600;
+  height: 46px;
+  border-radius: 9999px;
+  border: none;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 98, 245, 0.25);
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.action-btn:active {
+  background-color: #0052cc;
+  transform: scale(0.99);
+}
+
+.qr-container {
+  background: #ffffff;
+  padding: 24px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-footer {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.footer-heading {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.footer-paragraph {
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: #6b7280;
+  margin: 0;
 }
