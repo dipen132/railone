@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const qrContainer = document.getElementById("qrcode");
   if (qrContainer && window.QRCode) {
     new QRCode(qrContainer, {
-      text: "UTS:X53JEHL010|Kapadia Om Vipulkuma|ANKLESHWAR JN.-SURAT|270.00|30/10/2026-29/11/2026|MNBPK7746M",
+      text: "UTS:X53JEHL010|Dipen Dixit Modi|ANKLESHWAR JN.-SURAT|270.00|30/10/2026-29/11/2026|GIXPM8699J",
       width: 200,
       height: 200,
       colorDark: "#000000",
