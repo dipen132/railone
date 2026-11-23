@@ -144,24 +144,27 @@ body {
 }
 
 /* ==========================================================================
-   2. Greeting Banner (Full-Width Flat White Header Bar)
+   2. Greeting Banner (Authentic Floating Soft-Green Rounded Badge)
    ========================================================================== */
 .greeting-banner {
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-  color: #4b5563;
+  background-color: #e8f5e2;
+  border: 1px solid rgba(132, 196, 62, 0.35);
+  border-radius: 8px;
+  color: #223f1c;
   font-size: 12px;
-  font-weight: 400;
-  height: 36px;
-  padding: 0 16px;
+  font-weight: 500;
+  height: 38px;
+  margin: 10px 12px 0 12px;
+  padding: 0 12px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  text-align: left;
+  justify-content: center;
+  text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   letter-spacing: -0.01em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 /* ==========================================================================
@@ -204,7 +207,7 @@ body {
 
 /* Left Stub: INDIAN RAILWAYS */
 .card-stub-left {
-  width: 52px;
+  width: 50px;
   flex-shrink: 0;
   position: relative;
   display: flex;
@@ -219,9 +222,9 @@ body {
   transform: translate(-50%, -50%) rotate(-90deg);
   transform-origin: center center;
   white-space: nowrap;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.14em;
   color: #ffffff;
   line-height: 1;
   text-transform: uppercase;
@@ -241,14 +244,14 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(-90deg);
+  transform: translate(-50%, -50%) rotate(90deg);
   transform-origin: center center;
   white-space: nowrap;
   font-family: 'NotoSansRailway', 'Noto Sans Devanagari', sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0;
-  word-spacing: 10px;
+  word-spacing: 6px;
   color: #ffffff;
   line-height: 1;
 }
